@@ -31,10 +31,8 @@ plugins:
     - search
     - with-pdf:
         custom_template_path: pdf_template
-        cover_title: Link User Guide
-        cover_subtitle: Link version 3.0
         cover_logo: img/cover_swirl.jpg
         font_family: Atkinson Hyperlegible
-        debug_html: true
+        debug_html: false
         author: ""
         toc_title: Contents

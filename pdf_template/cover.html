@@ -1,44 +1,90 @@
 <article id="doc-cover">
 	<style>
-        @page {
-            size: A4;
-            margin: 0mm;
+		@page {
+			size: A4;
+			margin: 0mm;
+		}
+		* {font-family: "Atkinson Hyperlegible"!important;}
+        article#doc-cover > .wrapper.upper {
+            padding: 0 2em 0 0;
         }
-		* {font-family: "Atkinson Hyperlegible";}
-		article#doc-cover > .wrapper.upper > h1,h2 {
-            position: relative;
-            top: -70px;
+		article#doc-cover > .wrapper.upper > h1,
+		article#doc-cover > .wrapper.upper > h2 {
+			position: relative;
+			top: -52px;
 			font-size: 25pt;
 			float: right;
 			line-height: 1;
 			padding: 0;
 			margin: 0;
 		}
+		article#doc-cover > .wrapper.upper > h2 {
+			margin-top: 2rem;
+		}
+		article#doc-cover > .wrapper.upper .toolVersion {
+			color: #d2691e;
+		}
 		article#doc-cover h1,h2 {border-bottom: none;}
-        article#doc-cover > .wrapper.logo {padding:0; margin:0;}
-        article#doc-cover > .wrapper > .logo {
-            height: 450px;
-            width: 100vw;
-            padding: 0;
-            margin: 0;
+		article#doc-cover > .wrapper.logo {padding:0; margin:0;}
+		article#doc-cover > .wrapper > .logo {
+            /* Cover swirl image */
+			height: 450px;
+			width: 100vw;
+			padding: 0;
+			margin: 0;
+			background-size: contain;
+			background-repeat: no-repeat;
+            position: relative;
+            top: 12em;
+		}
+        #coverLogo { 
+            /* Dyalog logo image */
             background-size: contain;
             background-repeat: no-repeat;
+            position: relative;
+            z-index: 3;
+            height: 70px;
+            top: 5em;
+            left: 305px;
+        }
+        article#doc-cover > .wrapper.coverLogo > p {
+            /* Tool of Thought tagline */
+            position: relative;
+            left: 160px;
+            top: 40px;
+            font-size: 16pt;
         }
 	</style>
 	<div class="wrapper upper">
-			<h1>Link</h1>
-			<h1>User Guide</h1>
-			<h2>{{ cover_subtitle | e }}</h2>
+		<h1>Link</h1>
+		<h1>User Guide</h1>
+		<h2>Link version <span class="toolVersion">3.0</span></h2>
 	</div>
 	{% if cover_logo is defined %}
 		<div class="wrapper logo">
 			<div class="logo" style="background-image: url({{ cover_logo | to_url }});"></div>
 		</div>
 	{% else %}
-			<div class="wrapper"></div>
+		<div class="wrapper"></div>
 	{% endif %}
-	<div class="properties">	</div>
+	<div class="wrapper coverLogo">
+		<div id="coverLogo" style="background-image: url('file:///home/WinDoc/GitHub/link/docs/img/cover_logo.svg');"></div>
+        <p>The Tool of Thought for Software Solutions</p>
+	</div>
 </article>
+<style>
+		article#doc-info {
+				padding: 3rem;
+		}
+</style>
 <article id ="doc-info">
-	<div class="wrapper lower">Look at all this good informations</div>
+	<div class="wrapper lower">
+		<p><em>
+			Dyalog is a trademark of Dyalog Limited<br>
+			Copyright © 1982-2021 by Dyalog Limited<br>
+			All rights reserved.
+		</em></p>
+		<p>Link User Guide</p>
+		<p>Link version 3.0</p><!-- AUTOMATE! -->
+	</div>
 </article>
