@@ -1,0 +1,1182 @@
+<html><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="file:///home/WinDoc/GitHub/link/site/assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.1.2, mkdocs-material-7.1.2" name="generator"/>
+<title>Link 3.0</title>
+<link href="file:///home/WinDoc/GitHub/link/site/assets/stylesheets/main.6f955dcd.min.css" rel="stylesheet"/>
+<link href="file:///home/WinDoc/GitHub/link/site/assets/stylesheets/palette.ef6f36e2.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+<style>:root {
+  string-set: author '', copyright '', title 'Link User Guide'; }
+
+h1, h2, h3 {
+  string-set: chapter content(); }
+@page {
+  size: a4 portrait;
+  margin: 25mm 10mm 25mm 10mm;
+  counter-increment: page;
+  white-space: pre;
+  color: grey;
+  @top-right {
+    font-size: 7pt;
+    content: string(chapter); }
+  @bottom-center {
+    font-size: 8pt;
+    content: "- " counter(page) "/" counter(pages) " -"; }
+  @bottom-right {
+    font-size: 6pt;
+    content: string(copyright); } }
+
+@media print {
+  body {
+    background: none;
+    background-color: #fff; } }
+
+article,
+section + section {
+  page-break-before: always;
+  min-height: 100vh;
+  /* Defining all page breaks */ }
+  article,
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article div.tabbed-content--wrap > .tabbed-content,
+  section + section,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section div.tabbed-content--wrap > .tabbed-content {
+    clear: both; }
+  article h1,
+  article h2,
+  article h3,
+  article h4,
+  article h5,
+  article h6,
+  article img,
+  section + section h1,
+  section + section h2,
+  section + section h3,
+  section + section h4,
+  section + section h5,
+  section + section h6,
+  section + section img {
+    page-break-after: avoid;
+    page-break-inside: avoid; }
+  article a,
+  article blockquote,
+  article table,
+  article ul,
+  article ol,
+  section + section a,
+  section + section blockquote,
+  section + section table,
+  section + section ul,
+  section + section ol {
+    page-break-before: avoid;
+    page-break-inside: avoid; }
+  article pre,
+  article dt + dd,
+  section + section pre,
+  section + section dt + dd {
+    page-break-before: avoid; }
+  article h1 + ul,
+  article h2 + ul,
+  article h3 + ul,
+  article h4 + ul,
+  article h5 + ul,
+  article h6 + ul,
+  article h1 + ol,
+  article h2 + ol,
+  article h3 + ol,
+  article h4 + ol,
+  article h5 + ol,
+  article h6 + ol,
+  section + section h1 + ul,
+  section + section h2 + ul,
+  section + section h3 + ul,
+  section + section h4 + ul,
+  section + section h5 + ul,
+  section + section h6 + ul,
+  section + section h1 + ol,
+  section + section h2 + ol,
+  section + section h3 + ol,
+  section + section h4 + ol,
+  section + section h5 + ol,
+  section + section h6 + ol {
+    page-break-inside: auto; }
+  article div.admonition,
+  section + section div.admonition {
+    page-break-inside: avoid; }
+  article div.tabbed-content--wrap,
+  section + section div.tabbed-content--wrap {
+    page-break-inside: avoid; }
+  article * + div.highlight,
+  article * + div.tabbed-set,
+  section + section * + div.highlight,
+  section + section * + div.tabbed-set {
+    page-break-before: avoid; }
+
+section.two-columns {
+  columns: 2;
+  column-gap: 1cm; }
+
+article h1 {
+  border-bottom: 2px solid #f00; }
+
+article h2 {
+  border-bottom: 1px solid #f99; }
+
+article h3 {
+  border-bottom: 0.5px solid #eee; }
+
+article h1 > .pdf-order,
+article h2 > .pdf-order,
+article h3 > .pdf-order {
+  padding-left: 6px; }
+
+article#doc-toc {
+  margin: 0 .8rem 1.2rem;
+  padding-top: .6rem;
+  font-size: 12pt;
+  line-height: 1.6; }
+  article#doc-toc > h1 {
+    margin: 0 0 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 1.2rem;
+    font-weight: 300;
+    letter-spacing: -.01em;
+    page-break-after: auto;
+    page-break-inside: auto;
+    bookmark-level: none; }
+    article#doc-toc > h1::before {
+      display: block;
+      margin-top: -9px;
+      padding-top: 9px;
+      content: ""; }
+  article#doc-toc ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 1em;
+    font-size: 8pt;
+    page-break-inside: auto !important; }
+  article#doc-toc li {
+    list-style: none; }
+    article#doc-toc li > a {
+      color: inherit;
+      text-decoration: none;
+      padding-top: 0.4rem;
+      border-bottom: 1px dotted #ddd;
+      display: inline-block;
+      width: 100%; }
+      article#doc-toc li > a > .pdf-order {
+        padding-right: 0.5em; }
+      article#doc-toc li > a::after {
+        float: right;
+        content: target-counter(attr(href), page); }
+
+@media print {
+  html {
+    font-size: 95%;
+    font-family: 'Kelmscott Roman NF', 'Noto Serif JP', serif; }
+  body {
+    font-size: 10.5pt;
+    font-family: 'Classico URW T OT', 'Noto Serif JP', serif; }
+  article {
+    font-size: 0.8rem;
+    line-height: 1.6; }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  label {
+    font-family: 'Gentium Book Basic', 'Helvetica Neue', Helvetica, Arial, 'Noto Sans JP', 'Roboto', sans-serif; }
+  pre,
+  code,
+  var,
+  samp,
+  kbd,
+  tt {
+    font-family: 'Noto Sans Mono CJK JP', 'Courier New', monospace, serif;
+    font-size: 0.8em; }
+  pre code,
+  pre var,
+  pre samp,
+  pre kbd,
+  pre tt {
+    font-size: 100%; } }
+@page :first {
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-right {
+    content: normal; } }
+
+article#doc-cover {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; }
+  article#doc-cover > .wrapper {
+    flex: 1 0 auto;
+    text-align: center;
+    padding: 0 3rem; }
+    article#doc-cover > .wrapper.upper {
+      flex: 1 1 auto;
+      max-height: 30vh; }
+      article#doc-cover > .wrapper.upper > .logo {
+        width: 100%;
+        height: 100%;
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain; }
+    article#doc-cover > .wrapper h1 {
+      font-size: 36pt;
+      line-height: 1.4; }
+    article#doc-cover > .wrapper h2 {
+      border: none;
+      bookmark-level: none; }
+  article#doc-cover > .properties {
+    flex: 0 0 auto;
+    text-align: right;
+    padding: 0 2rem; }
+    article#doc-cover > .properties p#copyright {
+      font-size: 80%; }
+
+article#doc-back_cover {
+  page: back_cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center; }
+  article#doc-back_cover .wrapper {
+    flex: 1 0 auto;
+    display: inline-block;
+    background: #eee; }
+  article#doc-back_cover .qrcode {
+    display: inline-block;
+    flex: 0 0 auto;
+    background: #eee; }
+    article#doc-back_cover .qrcode > a {
+      display: inline-block;
+      padding: 0.5em 2em;
+      border-radius: 1em;
+      background-color: #fff; }
+      article#doc-back_cover .qrcode > a img {
+        width: 100%;
+        height: auto; }
+
+@page back_cover {
+  background-color: #eee;
+  @top-right {
+    content: normal; }
+  @bottom-center {
+    content: normal; }
+  @bottom-left {
+    font-size: 8pt;
+    content: string(title); }
+  @bottom-right {
+    font-size: 8pt;
+    content: string(copyright); } }
+</style><style>@media print {
+  .md-typeset .tabbed-set {
+    display: block; }
+    .md-typeset .tabbed-set .tabbed-content--wrap {
+      display: inline-block;
+      width: 100%;
+      margin-bottom: 0.25rem; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > input {
+        display: none; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > label {
+        background-color: rgba(170, 170, 170, 0.2);
+        padding: 0.2rem 2rem;
+        margin: 0;
+        font-weight: 600;
+        color: #666;
+        border-radius: 3px 3px 0 0;
+        border-bottom-color: transparent; }
+      .md-typeset .tabbed-set .tabbed-content--wrap > .tabbed-content {
+        display: block;
+        box-shadow: none; }
+  .md-typeset .admonition-title + .tabbed-set:last-child,
+  .md-typeset summary + .tabbed-set:last-child {
+    margin-top: 0.5rem; }
+  .md-typeset > details summary::after {
+    display: none; }
+  .md-typeset > div, .md-typeset > div.admonition, .md-typeset > details, .md-typeset > div.tabbed-set, .md-typeset > blockquote, .md-typeset > mark, .md-typeset > table, .md-typeset > p {
+    margin-left: 0.7rem; }
+  .md-typeset > table.highlighttable {
+    margin: 0 0 0 0.7rem; }
+  .md-typeset table.highlighttable,
+  .md-typeset table.highlighttable > tbody {
+    width: 100%; }
+  .md-typeset table.highlighttable {
+    padding-bottom: 0.5em; }
+    .md-typeset table.highlighttable .linenos {
+      padding-bottom: 0; }
+  .md-typeset > ul {
+    margin-left: 1.5rem; }
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    margin-left: 0.25rem; }
+  .md-typeset *:not(h3) + h4 {
+    margin-top: 1.5rem; }
+  .md-typeset hr {
+    border-bottom: 1px dotted #999; }
+  .md-typeset .footnote {
+    line-height: 1.1; }
+  .md-typeset table:not([class]) th, .md-typeset table:not([class]) td {
+    padding: 0.5em 1.25rem 0.4em; }
+  .md-typeset table:not([class]) td {
+    border-bottom: 1px solid #eee; }
+  .md-typeset span.twemoji {
+    vertical-align: middle;
+    height: 1.125rem; }
+    .md-typeset span.twemoji > img {
+      height: 1.125rem;
+      vertical-align: middle; } }
+.md-typeset kbd {
+  vertical-align: middle;
+  border-color: #b8b8b8;
+  border-style: outset;
+  border-width: .05rem .075rem .1rem .075rem;
+  border-radius: .25rem;
+  box-shadow: none; }
+
+:root {
+  --print-md-admonition-icon--note: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23448aff"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>');
+  --print-md-admonition-icon--abstract: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b0ff"><path d="M4 5h16v2H4V5m0 4h16v2H4V9m0 4h16v2H4v-2m0 4h10v2H4v-2z"/></svg>');
+  --print-md-admonition-icon--info: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300b8d4"><path d="M13 9h-2V7h2m0 10h-2v-6h2m-1-9A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10A10 10 0 0012 2z"/></svg>');
+  --print-md-admonition-icon--tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300bfa5"><path d="M17.66 11.2c-.23-.3-.51-.56-.77-.82-.67-.6-1.43-1.03-2.07-1.66C13.33 7.26 13 4.85 13.95 3c-.95.23-1.78.75-2.49 1.32-2.59 2.08-3.61 5.75-2.39 8.9.04.1.08.2.08.33 0 .22-.15.42-.35.5-.23.1-.47.04-.66-.12a.58.58 0 01-.14-.17c-1.13-1.43-1.31-3.48-.55-5.12C5.78 10 4.87 12.3 5 14.47c.06.5.12 1 .29 1.5.14.6.41 1.2.71 1.73 1.08 1.73 2.95 2.97 4.96 3.22 2.14.27 4.43-.12 6.07-1.6 1.83-1.66 2.47-4.32 1.53-6.6l-.13-.26c-.21-.46-.77-1.26-.77-1.26m-3.16 6.3c-.28.24-.74.5-1.1.6-1.12.4-2.24-.16-2.9-.82 1.19-.28 1.9-1.16 2.11-2.05.17-.8-.15-1.46-.28-2.23-.12-.74-.1-1.37.17-2.06.19.38.39.76.63 1.06.77 1 1.98 1.44 2.24 2.8.04.14.06.28.06.43.03.82-.33 1.72-.93 2.27z"/></svg>');
+  --print-md-admonition-icon--success: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300c853"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-admonition-icon--question: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2364dd17"><path d="M15.07 11.25l-.9.92C13.45 12.89 13 13.5 13 15h-2v-.5c0-1.11.45-2.11 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 00-2-2 2 2 0 00-2 2H8a4 4 0 014-4 4 4 0 014 4 3.2 3.2 0 01-.93 2.25M13 19h-2v-2h2M12 2A10 10 0 002 12a10 10 0 0010 10 10 10 0 0010-10c0-5.53-4.5-10-10-10z"/></svg>');
+  --print-md-admonition-icon--warning: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff9100"><path d="M13 14h-2V9h2m0 9h-2v-2h2M1 21h22L12 2 1 21z"/></svg>');
+  --print-md-admonition-icon--failure: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff5252"><path d="M12 2c5.53 0 10 4.47 10 10s-4.47 10-10 10S2 17.53 2 12 6.47 2 12 2m3.59 5L12 10.59 8.41 7 7 8.41 10.59 12 7 15.59 8.41 17 12 13.41 15.59 17 17 15.59 13.41 12 17 8.41 15.59 7z"/></svg>');
+  --print-md-admonition-icon--danger: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ff1744"><path d="M11.5 20l4.86-9.73H13V4l-5 9.73h3.5V20M12 2c2.75 0 5.1 1 7.05 2.95C21 6.9 22 9.25 22 12s-1 5.1-2.95 7.05C17.1 21 14.75 22 12 22s-5.1-1-7.05-2.95C3 17.1 2 14.75 2 12s1-5.1 2.95-7.05C6.9 3 9.25 2 12 2z"/></svg>');
+  --print-md-admonition-icon--bug: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23f50057"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 00-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 00-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8z"/></svg>');
+  --print-md-admonition-icon--example: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23651fff"><path d="M7 13v-2h14v2H7m0 6v-2h14v2H7M7 7V5h14v2H7M3 8V5H2V4h2v4H3m-1 9v-1h3v4H2v-1h2v-.5H3v-1h1V17H2m2.25-7a.75.75 0 01.75.75c0 .2-.08.39-.21.52L3.12 13H5v1H2v-.92L4 11H2v-1h2.25z"/></svg>');
+  --print-md-admonition-icon--quote: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%239e9e9e"><path d="M14 17h3l2-4V7h-6v6h3M6 17h3l2-4V7H5v6h3l-2 4z"/></svg>'); }
+
+@media print {
+  .md-typeset .admonition-title {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .admonition-title::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .note > .admonition-title, .md-typeset .note > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .note > .admonition-title::before, .md-typeset .note > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--note); }
+  .md-typeset .abstract > .admonition-title, .md-typeset .tldr > .admonition-title, .md-typeset .summary > .admonition-title, .md-typeset .abstract > summary, .md-typeset .tldr > summary, .md-typeset .summary > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .abstract > .admonition-title::before, .md-typeset .tldr > .admonition-title::before, .md-typeset .summary > .admonition-title::before, .md-typeset .abstract > summary::before, .md-typeset .tldr > summary::before, .md-typeset .summary > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--abstract); }
+  .md-typeset .info > .admonition-title, .md-typeset .todo > .admonition-title, .md-typeset .info > summary, .md-typeset .todo > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .info > .admonition-title::before, .md-typeset .todo > .admonition-title::before, .md-typeset .info > summary::before, .md-typeset .todo > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--info); }
+  .md-typeset .tip > .admonition-title, .md-typeset .important > .admonition-title, .md-typeset .hint > .admonition-title, .md-typeset .tip > summary, .md-typeset .important > summary, .md-typeset .hint > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .tip > .admonition-title::before, .md-typeset .important > .admonition-title::before, .md-typeset .hint > .admonition-title::before, .md-typeset .tip > summary::before, .md-typeset .important > summary::before, .md-typeset .hint > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--tip); }
+  .md-typeset .success > .admonition-title, .md-typeset .done > .admonition-title, .md-typeset .check > .admonition-title, .md-typeset .success > summary, .md-typeset .done > summary, .md-typeset .check > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .success > .admonition-title::before, .md-typeset .done > .admonition-title::before, .md-typeset .check > .admonition-title::before, .md-typeset .success > summary::before, .md-typeset .done > summary::before, .md-typeset .check > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--success); }
+  .md-typeset .question > .admonition-title, .md-typeset .faq > .admonition-title, .md-typeset .help > .admonition-title, .md-typeset .question > summary, .md-typeset .faq > summary, .md-typeset .help > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .question > .admonition-title::before, .md-typeset .faq > .admonition-title::before, .md-typeset .help > .admonition-title::before, .md-typeset .question > summary::before, .md-typeset .faq > summary::before, .md-typeset .help > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--question); }
+  .md-typeset .warning > .admonition-title, .md-typeset .attention > .admonition-title, .md-typeset .caution > .admonition-title, .md-typeset .warning > summary, .md-typeset .attention > summary, .md-typeset .caution > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .warning > .admonition-title::before, .md-typeset .attention > .admonition-title::before, .md-typeset .caution > .admonition-title::before, .md-typeset .warning > summary::before, .md-typeset .attention > summary::before, .md-typeset .caution > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--warning); }
+  .md-typeset .failure > .admonition-title, .md-typeset .missing > .admonition-title, .md-typeset .fail > .admonition-title, .md-typeset .failure > summary, .md-typeset .missing > summary, .md-typeset .fail > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .failure > .admonition-title::before, .md-typeset .missing > .admonition-title::before, .md-typeset .fail > .admonition-title::before, .md-typeset .failure > summary::before, .md-typeset .missing > summary::before, .md-typeset .fail > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--failure); }
+  .md-typeset .danger > .admonition-title, .md-typeset .error > .admonition-title, .md-typeset .danger > summary, .md-typeset .error > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .danger > .admonition-title::before, .md-typeset .error > .admonition-title::before, .md-typeset .danger > summary::before, .md-typeset .error > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--danger); }
+  .md-typeset .bug > .admonition-title, .md-typeset .bug > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .bug > .admonition-title::before, .md-typeset .bug > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--bug); }
+  .md-typeset .example > .admonition-title, .md-typeset .example > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .example > .admonition-title::before, .md-typeset .example > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--example); }
+  .md-typeset .quote > .admonition-title, .md-typeset .cite > .admonition-title, .md-typeset .quote > summary, .md-typeset .cite > summary {
+    padding: .6rem .6rem .4rem 2.2rem; }
+  .md-typeset .quote > .admonition-title::before, .md-typeset .cite > .admonition-title::before, .md-typeset .quote > summary::before, .md-typeset .cite > summary::before {
+    margin-top: -0.15rem;
+    background-color: transparent;
+    background-image: var(--print-md-admonition-icon--quote); } }
+
+:root {
+  --print-md-footnotes-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23000000de"><path d="M19 7v4H5.83l3.58-3.59L8 6l-6 6 6 6 1.41-1.42L5.83 13H21V7h-2z"/></svg>'); }
+
+@media print {
+  .md-typeset .footnote-backref::before {
+    background-color: transparent;
+    background-image: var(--print-md-footnotes-icon); } }
+
+:root {
+  --print-md-details-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="hsla(0, 0%, 0%, 0.87)"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>'); }
+
+@media print {
+  .md-typeset summary::after {
+    background-color: transparent;
+    background-image: var(--print-md-details-icon);
+    -webkit-mask-image: none;
+    mask-image: none; } }
+
+:root {
+  --print-md-tasklist-icon: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23ddd"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>');
+  --print-md-tasklist-icon--checked: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%2300e676"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>'); }
+
+@media print {
+  .md-typeset .task-list-control .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon); }
+  .md-typeset .task-list-control [type=checkbox]:checked + .task-list-indicator::before {
+    background-color: transparent;
+    background-image: var(--print-md-tasklist-icon--checked); } }
+
+/*# sourceMappingURL=material-polyfills.css.map*/
+</style></head><body><article id="doc-cover">
+<style>
+        @page {
+            size: A4;
+            margin: 0mm;
+        }
+		* {font-family: "Atkinson Hyperlegible";}
+		article#doc-cover > .wrapper.upper > h1,h2 {
+            position: relative;
+            top: -70px;
+			font-size: 25pt;
+			float: right;
+			line-height: 1;
+			padding: 0;
+			margin: 0;
+		}
+		article#doc-cover h1,h2 {border-bottom: none;}
+        article#doc-cover > .wrapper.logo {padding:0; margin:0;}
+        article#doc-cover > .wrapper > .logo {
+            height: 450px;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+	</style>
+<div class="wrapper upper">
+<h1>Link</h1>
+<h1>User Guide</h1>
+<h2>Link version 3.0</h2>
+</div>
+<div class="wrapper logo">
+<div class="logo" style="background-image: url(file:///home/WinDoc/GitHub/link/docs/img/cover_swirl.jpg);"></div>
+</div>
+<div class="properties"> </div>
+</article>
+<article id="doc-info">
+<div class="wrapper lower">Look at all this good informations</div>
+</article><article id="doc-toc"><h1>Contents</h1><ul><li><a href="#.:introduction"><span class="pdf-order">1. </span>Introduction</a><ul><li><a href="#.:what-is-link"><span class="pdf-order">1.1 </span>What is Link?</a></li><li><a href="#.:link-is-not"><span class="pdf-order">1.2 </span>Link is NOT...</a></li><li><a href="#.:link-fundamentals"><span class="pdf-order">1.3 </span>Link Fundamentals</a></li><li><a href="#.:functions-vs-user-commands"><span class="pdf-order">1.4 </span>Functions vs. User Commands</a></li><li><a href="#.:further-reading"><span class="pdf-order">1.5 </span>Further Reading</a></li><li><a href="#.:frequently-asked-questions"><span class="pdf-order">1.6 </span>Frequently Asked Questions</a></li></ul></li><li><a href="#I5SXI5DJNZTSAU3UMFZHIZLE/"><span class="pdf-order">2. </span>Getting Started</a><ul><li><a href="#GettingStarted/:getting-started"><span class="pdf-order">2.1 </span>Getting Started</a></li><li><a href="#GettingStarted/Setup/:setting-up-your-environment"><span class="pdf-order">2.2 </span>Setting up your Environment</a></li><li><a href="#GettingStarted/WStoLink/"><span class="pdf-order">2.3 </span>WStoLink</a></li><li><a href="#GettingStarted/SALTtoLink/"><span class="pdf-order">2.4 </span>SALTtoLink</a></li><li><a href="#GettingStarted/Installation/:installation"><span class="pdf-order">2.5 </span>Installation</a></li></ul></li><li><a href="#Upgradeto30/:upgrading-to-link-30"><span class="pdf-order">3. </span>Upgrading to Link 3.0</a></li><li><a href="#ReleaseNotes/:release-notes"><span class="pdf-order">4. </span>Release Notes</a><ul><li><a href="#ReleaseNotes/:version-30"><span class="pdf-order">4.1 </span>Version 3.0</a></li><li><a href="#ReleaseNotes/:version-21"><span class="pdf-order">4.2 </span>Version 2.1</a></li><li><a href="#ReleaseNotes/:version-20"><span class="pdf-order">4.3 </span>Version 2.0</a></li></ul></li><li><a href="#IRUXGY3VONZWS33O/"><span class="pdf-order">5. </span>Discussion</a><ul><li><a href="#Discussion/TechDetails/:technical-details-and-limitations"><span class="pdf-order">5.1 </span>Technical Details and Limitations</a></li><li><a href="#Discussion/Workspaces/"><span class="pdf-order">5.2 </span>Workspaces</a></li><li><a href="#Discussion/HowDoesItWork/:how-does-link-work"><span class="pdf-order">5.3 </span>How does Link work?</a></li><li><a href="#Discussion/History/:history"><span class="pdf-order">5.4 </span>History</a></li></ul></li><li><a href="#IFIES/"><span class="pdf-order">6. </span>API</a><ul><li><a href="#API/"><span class="pdf-order">6.1 </span>Index</a></li><li><a href="#API/Link.Add/:linkadd"><span class="pdf-order">6.2 </span>Link.Add</a></li></ul></li></ul></article><article class="md-content__inner md-typeset" data-url="/." id=".:">
+<h1 id=".:introduction"><span class="pdf-order">1. </span>Introduction</h1>
+<p>Link version 3.0 is included with Dyalog version 18.1. If you have an earlier version of APL or Link, you may want to check out one or more of the following pages before continuing: </p>
+<ul>
+<li><a href="#Upgradeto30/:">Migrating to Link 3.0 from from Link 2.0:</a> If you are already using an earlier version of Link.</li>
+<li><a href="#GettingStarted/SALTtoLink/:">Migrating to Link 3.0 from SALT:</a> If you have APL source in text files managed by SALT that you want to migrate to Link.</li>
+<li><a href="#GettingStarted/Installation/:">Installation instructions:</a> If you want to pick Link up directly from the GitHub repository rather than use the version installed with APL, for example if you want to use Link 3.0 with Dyalog version 18.0.</li>
+<li><a href="#Discussion/History/:">The historical perspective:</a> Link is a step on a journey which begins more than a decade ago with the introduction of SALT for managing source code in text files, as an alternative to binary workspaces and files, and will hopefully end with the interpreter handling everything itself.</li>
+</ul>
+<h2 id=".:what-is-link"><span class="pdf-order">1.1 </span>What is Link?</h2>
+<p><strong><em>Link</em></strong> allows you to use Unicode text files to store APL source code, rather than "traditional" binary workspaces. The benefits of using Link and text files include:</p>
+<ul>
+<li>It is easy to use source code management tools like Git or Subversion to manage your code.</li>
+</ul>
+<p><em>Note that an SCM is not a requirement for using Link</em>; without an SCM you just need your own strategy for taking suitable copies of your source files, as your would with workspaces.</p>
+<ul>
+<li>
+<p>Changes to your code are <strong>immediately</strong> written to file: there is no need to remember to save your work. The assumption is that you will make the record permanent with a <em>commit</em> to your source code management system, when the time is right.</p>
+</li>
+<li>
+<p>Unlike binary workspaces, text source can be shared between different versions of APL - or even with human readers or writers don't have APL installed at all.</p>
+</li>
+<li>
+<p>Source code stored in external files is preserved exactly as typed, rather than being reconstructed from the tokenised form.</p>
+</li>
+</ul>
+<p>Although an SCM is not a requirement for Link: if you are not already using a source code management system, we <strong><em>highly</em></strong> recommend making the effort to <a href="#GettingStarted/SCMforAPLers/:">learn about - and install Git</a>.</p>
+<h2 id=".:link-is-not"><span class="pdf-order">1.2 </span>Link is NOT...</h2>
+<ul>
+<li><strong>A source code management system</strong>: we recommend using Git to manage the text files that Link will help you create and edit using Dyalog APL.</li>
+<li><strong>A database management system:</strong> although Link is able to store APL arrays using a pre-release of the <em>literal array notation</em>, this is only intended to be used for constants which you consider to be part of the source code of your applications. Although all functions and operators that you define will be written to source files by default, arrays are only written to source files upon request using <a href="#API/Link.Add/:">Link.Add</a> or by specifying optional parameters to <a href="#API/Link.Export/:">Link.Export</a>. Application data should be stored in a database management system or files managed by the application.</li>
+</ul>
+<h2 id=".:link-fundamentals"><span class="pdf-order">1.3 </span>Link Fundamentals</h2>
+<p>Link establishes <strong><em>links</em></strong> between one or more <strong>namespaces</strong> in the active APL workspace and corresponding <strong>directories</strong> containing APL source code in Unicode test files. For example, the following user command invocation will link a namespace called <code>myapp</code> to the folder <code>/home/sally/myapp</code>:</p>
+<pre><code class="language-apl">      ]link.Create myapp /home/sally/myapp
+</code></pre>
+<p>If <code>myapp</code> contains sub-directories, a namespace hierarchy corresponding to the directory structure will be created within the <code>myapp</code> namespace. By default, the link is bi-directional, which means that Link will:</p>
+<ul>
+<li><strong>Keep Source Files up-to-date:</strong> 
+Any changes made to code in the active workspace using the tracer and editor are immediately replicated in the corresponding text files.</li>
+<li><strong>Keep the Workspace up-to-date:</strong>
+Any changes made to the external files using a text editor, or resulting from an SCM action such as rolling back or switching to different branch, will immediately be reflected in the active workspace.</li>
+</ul>
+<p>You can invoke <code>]Link.Create</code>several times to create multiple links, and you can also use <code>]Link.Import</code>or <code>]Link.Export</code> to import source code into the workspace or export code to external files <em>without</em> creating links that will respond to subsequent changes. </p>
+<h2 id=".:functions-vs-user-commands"><span class="pdf-order">1.4 </span>Functions vs. User Commands</h2>
+<p>Before we move on to look at creating some links, a few words about the two ways that Link functionality can be accessed. With a few exceptions, each <a href="#API/:">Link API function</a> has a corresponding User Command, designed to make the functionality slightly easier to use interactively.</p>
+<h3 id=".:user-commands"><span class="pdf-order">1.4.1 </span>User commands</h3>
+<p>The user commands have the general syntax</p>
+<pre><code>     ]LINK.CmdName arg1 [arg2] [-name[=value] ...]
+</code></pre>
+<p>where <code>arg2</code>'s presence depends on the specific command, and <code>-name</code> is a flag enabling the specific option and <code>-name=value</code> sets the specific option to a specific value. Some options (like <code>codeExtensions</code> and <code>typeExtensions</code>) require an array of values: in these cases the user commands typically take the <em>name</em> of a variable containing the needed array.</p>
+<p>For a list of installed user commands, type:</p>
+<pre><code class="language-apl">     ]link .?
+</code></pre>
+<h3 id=".:api-functions"><span class="pdf-order">1.4.2 </span>API Functions</h3>
+<p>The API is designed for use under programme control, and options are provided in an optional namespace passed as the left argument. The general syntax of the utility functions is</p>
+<pre><code class="language-apl">     options FnName arg
+</code></pre>
+<p>where <code>options</code> is a namespace with variables named according to the option they set, containing their corresponding values. The <code>-name=value</code> option can be set by <code>options.name←value</code>, and switches with values (e.g. <code>-name</code>) can be set by <code>options.name←1</code>. Unset options will assume their default value (just like omitted modifiers in the user command).</p>
+<p>The details of the arguments to the functions and the user commands can be found in the <a href="#API/:">API Reference</a>.</p>
+<h2 id=".:further-reading"><span class="pdf-order">1.5 </span>Further Reading</h2>
+<p>To continue your journey towards getting set up with Link, you will want to read:</p>
+<ul>
+<li><a href="#GettingStarted/:">Getting Started</a>, to see how to set up your first links, and learn about exporting existing application code to source files.</li>
+<li><a href="#GettingStarted/Setup/:">Setting up your environment</a>, for a discussion of how to set up Link-based development and runtime environments.</li>
+<li><a href="#Discussion/TechDetails/:">Technical Details and Limitations</a>, if you want to know about the full range of APL objects that are supported, and some of the edge cases that are not yet supported by Link.</li>
+</ul>
+<p>If you have an existing APL application that you want to move to Link, you may want to read one of the following texts first:</p>
+<ul>
+<li><a href="#GettingStarted/WStoLink/:">Converting your workspace to text source</a> (if you already have an existing body of APL code that is not in Link, you may want to read).</li>
+<li><a href="#GettingStarted/SALTtoLink/:">Migrating to Link 3.0 from SALT</a>, if you are already managing text source using Link's predecessor SALT.</li>
+</ul>
+<h2 id=".:frequently-asked-questions"><span class="pdf-order">1.6 </span>Frequently Asked Questions</h2>
+<ul>
+<li><a href="#Discussion/Workspaces/:">What happens if I save a workspace after creating Links?</a></li>
+<li><a href="#Discussion/Workspaces/:">Are workspaces dead now?</a></li>
+<li><a href="#Discussion/HowDoesItWork/:">How is Link implemented?</a></li>
+</ul>
+</article><article class="md-content__inner md-typeset" data-url="/I5SXI5DJNZTSAU3UMFZHIZLE/" id="I5SXI5DJNZTSAU3UMFZHIZLE/:"><h1 id="I5SXI5DJNZTSAU3UMFZHIZLE/"><span class="pdf-order">2. </span>Getting Started</h1><section class="md-typeset" data-url="/GettingStarted/" id="GettingStarted/:">
+<h2 id="GettingStarted/:getting-started"><span class="pdf-order">2.1 </span>Getting Started</h2>
+<h4 id="GettingStarted/:linking-to-an-existing-directory">Linking to an Existing Directory</h4>
+<p>In daily use, the assumption is that your source already exists in one or more file system folders that you are managing using an SCM like Git, or taking copies of at suitable intervals using some other mechanism. <a href="/API/Link.Create.md">Link.Create</a> loads the source code into the workspace so that you can work with it, keeping the content of the workspace synchronised with the source files, no matter which side of the link you make changes.</p>
+<p>For example, the following user command load all the code in the folder <code>/home/sally/myapp</code> into a namespace called <code>myapp</code> , creating the namespace if it does not exist: </p>
+<pre><code class="language-apl">      ]link.Create myapp /home/sally/myapp
+</code></pre>
+<p>The first argument to the user command, and to the corresponding API function <code>⎕SE.Link.Create</code> is the name of a namespace (in the case of the function you could also use a reference to an existing namespace). The second argument is a directory name.</p>
+<h4 id="GettingStarted/:starting-with-a-workspace">Starting with a Workspace</h4>
+<p>If your existing code is in a workspace rather than in source files, you may want to skip forward and read the section on <a href="#GettingStarted/WStoLink/:">converting a workspace to source files</a> before continuing.</p>
+<h4 id="GettingStarted/:starting-a-new-project">Starting a New project</h4>
+<p>Of course, you might be one of those lucky people who is starting a completely new project. In this casem you can still use <code>Link.Create</code>, but you will need to create either the namespace or the folder (or both) first. For the command to succeed, at least one of them needs to exist and exactly one of them needs to contain some code.</p>
+<ul>
+<li>If neither of them exist, Link.Create will reject the request on suspicion that there is a typo, in order to avoid silently creating an empty directory by mistake.</li>
+<li>If both of them exist AND contain code, and the code is not identical on both sides, Link.Create will fail and you will need to specify the  <code>source</code> option, whether the namespace or the directory should be considered to be the source. Incorrectly specifying the source will potentially overwrite existing content on the other side, so use this with extreme caution!</li>
+</ul>
+<p>To illustrate, we will create a namespace and populate it with two dfns and one tradfn, in order to have something to work with. In this example, the functions are created using APL expressions; under normal use the functions would probably be created using the editor, or perhaps loaded or copied from an existing workspace.</p>
+<pre><code class="language-apl">      'stats' ⎕NS ⍬ ⍝ Create an empty namespace
+      stats.⎕FX 'mean←Mean vals;sum' 'sum←+⌿,vals' 'mean←sum÷1⌈⍴,vals'
+      stats.Root←{⍺←2 ⋄ ⍵*÷⍺}
+      stats.StdDev←{2 Root(+.×⍨÷⍴),⍵-Mean ⍵}
+</code></pre>
+<p>We could now create a source directory using <a href="/API/Link.Export.md">Link.Export</a>, and then use <a href="/API/Link.Create.md">Link.Create</a> to create a link to it. However, <a href="/API/Link.Create.md">Link.Create</a> can do this in one step: assuming that the directory <code>/tmp/stats</code> is empty or does not exist, the following command will detect that there is code in the workspace but not in the directory, and create a link based on the namespace that we just created:</p>
+<pre><code class="language-apl">      ]LINK.Create stats /tmp/stats -source=ns
+Linked: #.stats ←→ C:\tmp\stats
+</code></pre>
+<p>The double arrow <code>←→</code> in the output indicates that synchronisation is bi-directional. We can verify that the three expected files have been created:</p>
+<pre><code class="language-apl">      ls←⎕NINFO⍠1 ⍝ List files, allowing wildcards
+      ls '/tmp/stats/*'
+  /tmp/stats/Mean.aplf  /tmp/stats/Root.aplf  /tmp/stats/StdDev.aplf  
+</code></pre>
+<p>Let's verify that our source directory can be used to re-build the original namespace::</p>
+<pre><code class="language-apl">      )CLEAR
+clear ws
+      ]LINK.Create stats /tmp/stats
+Linked: stats ←→ C:\tmp\stats
+      stats.⎕NL -3 ⍝ Verify functions were loaded as expected
+ Mean  Root  StdDev
+</code></pre>
+<p>If you have an existing workspace containing several namespaces, code in the root of the workspace, or variables, you will want to read about <a href="#GettingStarted/WStoLink/:">converting your workspace to text source</a>.</p>
+<h4 id="GettingStarted/:working-with-the-code">Working with the Code</h4>
+<p>Once the link is set up, you can work with your code using the Dyalog IDE exactly as you would if you were not using Link; the only difference being that Link will ensure that any changes you make to the code within the <code>stats</code>namespace are instantly copied to the corresponding source file. </p>
+<p>NB: In the context of this document, the term <em>Dyalog IDE</em> includes both the Windows IDE and the Remote IDE (RIDE), which is tightly integrated with the interpreter.</p>
+<p>Conversely, if you are new to Dyalog APL, and have a favourite editor, you can use it to edit the source files directly, and any change that you make will be replicated in the active workspace. If you do not have a File System Watcher available on your platform, it may be a few seconds before the <a href="/Crawler.md">Crawler</a> kicks in and detects external changes.</p>
+<p>If you use editors inside or outside the APL system to add new functions, operators, namespaces or classes,  the corresponding change will be made on the other side of the link. For example, we could add a <code>Median</code> function:</p>
+<pre><code class="language-apl">      )ED stats.Median
+</code></pre>
+<p>In the Edit window, we complete the function:</p>
+<pre><code class="language-apl">Median←{
+     asc←⍋vals←,⍵
+     Mean vals[asc[⌈2÷⍨0 1+⍴vals]]
+ }
+</code></pre>
+<p>When the editor fixes the definition of the function in the workspace, Link will create a new file:</p>
+<pre><code class="language-apl">      ls '/tmp/stats/*'
+  /tmp/stats/Mean.aplf  /tmp/stats/Median.aplf  /tmp/stats/Root.aplf  /tmp/stats/StdDev.aplf  
+</code></pre>
+<h4 id="GettingStarted/:changes-made-outside-the-editor">Changes made Outside the Editor</h4>
+<p>When changes are made using the editor which is built-in to Dyalog IDE (which includes RIDE), source files are updated immediately. Changes made outside the editor will not immediately be picked up. This includes:</p>
+<ul>
+<li>Definitions created or changed using assignment (<code>←</code>), <code>⎕FX</code>  or <code>⎕FIX</code> - or the APL line "<code>∇</code>" editor.</li>
+<li>Definitions moved between workspaces or namespaces using <code>⎕CY</code>, <code>⎕NS</code> or <code>)COPY</code>.</li>
+<li>Definitions erased using <code>⎕EX</code>or <code>)ERASE</code></li>
+</ul>
+<p>If you write tools which modify source code under program control, it is a good idea to call the API functions <a href="/API/Link.Fix.md">Link.Fix</a> or <a href="/API/Link.Expunge.md">Link.Expunge</a> to inform Link that you have made the change.</p>
+<p>If you update the source files under program control and inbound synchronisation is not enabled, you can use <a href="/API/Link.Notify.md">Link.Notify</a> to let Link know about an external change that you would like to bring into the workspace.</p>
+<h4 id="GettingStarted/:arrays">Arrays</h4>
+<p>By default, Link does not consider arrays to be part of the source code of an application and will not write arrays to source files unless you explicitly request it. Link is not intended to be used as a database management system; if you have arrays that are modified during the normal running of your application, we recommend that you store that data in an RDBMS or other files that are managed by the application code, rather than using Link for this.</p>
+<p>If you have arrays that represent error tables, range definitions or other <em>constant</em> definitions that it makes sense to conside to be part of the source code, you can add them using <a href="/API/Link.Add.md">Link.Add</a>:</p>
+<pre><code class="language-apl">      stats.Directions←'North' 'South' 'East' 'West'
+      ]Link.Add stats.Directions
+Added: #.stats.Directions
+</code></pre>
+<p>Note that by default, source files for arrays are presumed to define the initial value of the array when the application starts. Note that changes made to arrays will not be picked up by a crawler even if the array was originally loaded from a source file.  You always need to use the built-in editor or explicitly call Link.Add to update the source file with a new value.</p>
+<p>Although changes to the array in the workspace are not automatically written to file, changes made to the source files will always be considered to be updates to the source code and reflected in the workspace if synchronisation is active.</p>
+<h4 id="GettingStarted/:setting-up-development-and-runtime-environments">Setting up Development and Runtime Environments</h4>
+<p>We have seen how to use <code>]Link.Create</code>to load textual source into the workspace in order to work with it. As your project grows, you will probably want to split your code into modules, for example application code in one directory and shared utilities in another - and maybe also run some code to get things set up.</p>
+<p>Next, we will look at <a href="#GettingStarted/Setup/:">Setting up Development and Runtime Environments</a>, so that you don't have to type the same sequence of things over and over again to get started with development - or running the application.</p>
+</section><section class="md-typeset" data-url="/GettingStarted/Setup/" id="GettingStarted/Setup/:">
+<h2 id="GettingStarted/Setup/:setting-up-your-environment"><span class="pdf-order">2.2 </span>Setting up your Environment</h2>
+<p>With a small project, you can get by using <code>]Link.Create</code> and/or <code>Link.Import</code> to bring your source into the workspace in order to work with it. However, even in a small project, this quickly gets tedious, and as the project grows, you may want to load code from more that one directory, and perhaps run some code in order to set things up or even start the application. Fortunately, the <a href="/API/index.md">Link API</a> provides all the functions that you need to automate the setup.</p>
+<p>To illustrate, we will create a small application that uses the stats library that we created in the <a href="#GettingStarted/:">introduction</a>. We'll put the application into a namespace called <code>linkdemo</code>:</p>
+<pre><code class="language-apl">      )clear
+clear ws
+      )ns linkdemo
+      ]link.create linkdemo /users/sally/linkdemo
+Linked: #.linkdemo ←→ /users/sally/linkdemo
+
+      )ed linkdemo.Run
+</code></pre>
+<p>Our application is going to prompt the user for an input array and output the mean and standard deviation of the data, until the user inputs an empty array. Obviously, the code should be enhanced to validate the input and perhaps trap errors, but that is left as an exercise for the reader.</p>
+<pre><code class="language-apl">     ∇ Main;data                                           
+[1]   ⍝ Compute Mean and StdDev until user inputs an empty array
+[2]                                                             
+[3]    :Repeat                                                  
+[4]        ⎕←'Enter some numbers:'                              
+[5]        :If 0≠⍴data←⎕                                        
+[6]            ⎕←'Mean:   ',1⍕#.stats.Mean data                      
+[7]            ⎕←'StdDev: ',1⍕#.stats.StdDev data                    
+[8]        :EndIf                                               
+[9]    :Until 0=≢data                                           
+     ∇                                                                                   
+</code></pre>
+<p>We will need the <code>stats</code> code in the workspace as well, of course. Since we only intend to use it and don't want to risk making changes to its source code while testing our own application, we will use <code>]link.import</code> rather than <code>]link.create</code> to bring that code into the workspace:</p>
+<pre><code class="language-apl">      ]link.import stats /users/sally/stats
+Imported: #.starts ← c:\tmp\stats
+
+      linkdemo.Main
+      Enter some numbers:
+⎕:
+      50+?100⍴100
+Mean:    102.4
+StdDev:  30.1
+Enter some numbers:
+⎕:
+      ⍬
+</code></pre>
+<h4 id="GettingStarted/Setup/:automating-startup">Automating Startup</h4>
+<p>Starting with version 18.0, it is simple to launch the interpreter from a text file: either a source file defining a function, namespace or class using the <a href="https://help.dyalog.com/18.0/#UserGuide/Installation-20and-20Configuration/Configuration-20Parameters/Load.htm">LOAD parameter</a> or from a configuration file using the  <a href="https://help.dyalog.com/18.0/#UserGuide/Installation-20and-20Configuration/Configuration-20Files.htm">CONFIGFILE parameter</a>. Configuration files allow you to both set a startup expression and include other configuration options for the interpreter. For example, if we were to define a file <code>dev.dcfg</code> in the <code>linkdemo</code> folder with the following contents:</p>
+<pre><code class="language-json">{
+  Settings: {
+      MAXWS: 100M,
+      LX: "linkdemo.Start 0 ⊣ ⎕←⎕SE.Link.Create 'linkdemo' ⎕SE.Link.LaunchDir"
+  }
+}
+</code></pre>
+<p>This specifies an APL session with a MAXWS of 100 megabytes, which will start by creating the <code>linkdemo</code>  namespace and calling <code>linkdemo.Start</code>. The namespace will be created using the directory named by the result of the function <code>⎕SE.Link.LaunchDir</code>; this will be the directory that the CONFIGFILE parameter refers to (or, if there is no CONFIGFILE, the directory referred to by the LOAD parameter).</p>
+<p>The function <code>linkdemo.Start</code> will bring in the <code>stats</code> library using <code>Link.Import</code>: since we are not developers of this library, we don't want to create a bi-directional link that might allow us to accidentally modify it during our testing. It also creates the name <code>ST</code> to point to the stats library, which means that our <code>Run</code> function can use more pleasant names, like <code>ST.Mean</code> in place of <code>#.stats.Mean</code> - which also makes it easier to relocate that module in the workspace:</p>
+<pre><code class="language-apl">     ∇ Start run                                                                       
+[1]   ⍝ Establish development environment for the linkdemo application                 
+[2]                                                                                    
+[3]    ⎕IO←⎕ML←1                                                                       
+[4]    ⎕SE.Link.Import '#.stats' '/home/sally/stats' ⍝ Load the stats library
+[5]    ST←#.stats                                                                      
+[6]
+[7]    :If run                                                                         
+[8]        Main                                                                        
+[9]        ⎕OFF                                                                        
+[10]   :EndIf                                                                          
+     ∇                                                                                 
+</code></pre>
+<p>We can now launch out development environment using <code>dyalog CONFIGFILE=linkdemo/devt.cfg</code>, or on some platforms right-clicking on this file and selecting Run.</p>
+<h4 id="GettingStarted/Setup/:development-vs-runtime">Development vs Runtime</h4>
+<p>The <code>Start</code>function takes a right argument <code>run</code> which decides whether it should just exit after initialising the environment, or it should launch the application by calling <code>Run</code>and terminate the session when the user decides that the job is done.</p>
+<p>This allows us to create a second configuration file, <code>linkdemo/run.dcfg</code>, which differs from <code>dev.dcfg</code> in that we reserve a bigger workspace (since we'll be doing real work rather than just testing), and brings the source code in using <code>Link.Import</code> rather than <code>Link.Create</code>, which means that we won't waste resources setting up a file system watcher, and that accidental changes made by anyone running the application will not update the source files.</p>
+<pre><code class="language-json">{
+  Settings: {
+      MAXWS: 1G,
+      LX: "linkdemo.Start 1 ⊣ ⎕←⎕SE.Link.Import 'linkdemo' ⎕SE.Link.LaunchDir"
+  }
+}
+</code></pre>
+<h4 id="GettingStarted/Setup/:distribution-workspace">Distribution Workspace</h4>
+<p>As we have seen, Link allows you to run your application based entirely on textual source files. However, if you have a lot of source files it may be more convenient for the users of your application to receive a single workspace file with all of the source loaded. </p>
+<p>To prepare a workspace for shipment, we will need to:</p>
+<ul>
+<li>Set <code>⎕LX</code> in the so that it calls the <code>Start</code> function</li>
+<li>Use <a href="/API/Link.Break.md">Link.Break</a> to remove links to the source files. If you omit this step, you can create a <a href="/Workspaces.md#Saving-a-Workspace-with-Links">potentially confusing situation</a>.</li>
+<li><code>)SAVE</code> the workspace</li>
+</ul>
+</section><section class="md-typeset" data-url="/GettingStarted/WStoLink/" id="GettingStarted/WStoLink/:">
+<h2 id="GettingStarted/WStoLink/"><span class="pdf-order">2.3 </span>WStoLink</h2>
+<h4 id="GettingStarted/WStoLink/:converting-an-existing-workspace-to-use-link">Converting an Existing Workspace to use Link</h4>
+<p>In principle, it should be possible to write the entire contents of any workspace to an empty folder called <code>/folder/name</code> using the following command:</p>
+<pre><code class="language-apl">      ]Link.Create # /folder/name -arrays -sysVars
+</code></pre>
+<h5 id="GettingStarted/WStoLink/:-arrays">-arrays</h5>
+<p>By default, Link assumes that the "source code", only includes functions, operators, namespaces and classes. Variables are assumed to contain data which can either be erased or stored in some kind of database, rather than being part of the source. The <code>-arrays</code> causes all arrays in the workspace to be writte to source files as well (see the documentation for <a href="/API/Link.Create.md">Link.Create</a> for more options).</p>
+<h5 id="GettingStarted/WStoLink/:-sysvars">-sysVars</h5>
+<p>By default, Link will assume that you do <strong>not</strong> wish to record the settings for system variables, because your source will be loaded into an environment that already has the desired settings. If you want to be 100% sure to re-create your workspace exactly as it is, you can use <code>-sysVars</code> to record the values of system variables from each namespace in source files.</p>
+<p>Beware that this might add a <em>lot</em> of mostly redundant files to your repository. It is probably a better idea to analyse your workspace carefully and only write system variables to file if you really need them, using the <a href="/API/Link.Add.md">Link.Add</a>.</p>
+<h5 id="GettingStarted/WStoLink/:workspace-containing-namespaces">Workspace containing Namespaces</h5>
+<p>If your workspace is logically divided up into namespaces and you are happy for them all to end up in the same directory, you can use a single call to <a href="/API/Link.Create.md">Link.Create</a> like the one at the beginning of this section to write everything out at once. If you don't want the workspace to end up as a single directory tree, you can either restructure things afterwards using file explorers or command line tools, or you can make several calls to <a href="/API/Link.Create.md">Link.Create</a> to write the contents to different locations.</p>
+<p>If you create more than one source directory, you will need make more than one call to Link.Create or Link.Import in order to re-create the workspace in order to run your code.</p>
+<h5 id="GettingStarted/WStoLink/:flat-workspaces-and-the-flatten-switch">Flat Workspaces and the <code>-flatten</code> Switch</h5>
+<p>If your workspace is not divided into namespaces, but all your code and data are in the root (or #) namespace, it probably still consists of more than logically distinct sets of code ("modules"), that you wish to manage separately. In this case, all the source files will end up in the same folder.</p>
+<p>If you subsequently separate the code into separate folders in order to make the source more manageable, a <code>-flatten</code>switch allows you to bring them everything back into the original "flat" workspace structure, so that the application will run without requiring code changes.</p>
+<p>The mappings to source files will be preserved, so that you synchronisation will work if you edit the code in the APL system or using an external editor. However, if you create a new name inside the workspace, Link will not know which folder to write it to, and will prompt you to specify a target folder.</p>
+<h5 id="GettingStarted/WStoLink/:recreating-the-workspace">Recreating the Workspace</h5>
+<p>In order to recreate the workspace from source, you will need to make one or more calls to <code>Link.Create</code> or <code>Link.Import</code>. For some ideas on how to set this up, see <a href="#GettingStarted/Setup/:">Setting up your Environment</a>.</p>
+</section><section class="md-typeset" data-url="/GettingStarted/SALTtoLink/" id="GettingStarted/SALTtoLink/:">
+<h2 id="GettingStarted/SALTtoLink/"><span class="pdf-order">2.4 </span>SALTtoLink</h2>
+<h4 id="GettingStarted/SALTtoLink/:migrating-from-salt-to-link">Migrating from SALT to Link</h4>
+<p>If you have been using SALT (<a href="/History.md">Link's direct predecessor</a>) to maintain the source of your application, the good news is that nearly all your source files already have a format which can be used directly with Link (with the exception of source files containing arrays). </p>
+<p>There are a few issues that may require some work to sort out.</p>
+<h5 id="GettingStarted/SALTtoLink/:no-version-control-features">No Version Control Features</h5>
+<p>SALT includes primitive version control features, such as storing multiple versions of the source for a single function by creating file names containing sequence numbers, and providing tools to compare different versions. Link assumes that you will use an external SCM like Git or SVN, and contains no version control features of its own.</p>
+<h5 id="GettingStarted/SALTtoLink/:different-api">Different API</h5>
+<p>Obviously, you need to replace all calls to SALT functions like <code>⎕SE.SALT.Load</code> with calls to <code>⎕SE.Link.Create</code> or <code>⎕SE.Link.Import</code>.</p>
+<h5 id="GettingStarted/SALTtoLink/:file-name-extensions">File Name Extensions</h5>
+<p>SALT uses the extension of <code>.dyalog</code> for all source files including arrays. Link will load <code>.dyalog</code> files and, if you edit existing objects the source file will be updated. However, if you create any new items, all new files will have extensions that vary by type, for example <code>.aplf</code> for functions, <code>.apln</code> for namespaces, or <code>.apla</code> for arrays.</p>
+<p>You can rename all your source files to the Link defaults in one operation by creating a link using the <a href="/API/Link.Create.md">forcefilenames</a> switch. Remember to take a backup before you cause such a sweeping change to your source files!</p>
+<h5 id="GettingStarted/SALTtoLink/:dyappfiles"><code>.dyapp</code>Files</h5>
+<p>With version 18.0, you can launch the APL interpreter using any APL source file, or a configuration file. As a result, <code>.dyapp</code> files are now deprecated. The section on <a href="#GettingStarted/Setup/:">setting up your environment</a> contains examples of using the new mechanisms to launch your application.</p>
+<h5 id="GettingStarted/SALTtoLink/:arrays">Arrays</h5>
+<p>SALT uses a couple of different formats to represent arrays, either XML or executable APL expressions. Link uses the future literal array notation. You will need to load your arrays into the workspace using SALT and then use <a href="/API/Link.Add.md">Link.Add</a> to write them back out again.</p>
+<h5 id="GettingStarted/SALTtoLink/:loading-individual-files">Loading Individual Files</h5>
+<p>The SALT <code>Load</code> function supports loading individual source files and maintaining a link to the source file, so that editing the function will cause the source file to be updated. While <a href="/API/Link.Import.md">Link.Import</a> can load individual files, the files loaded in this way will not be synchronised. <a href="/API/Link.Create.md">Link.Create</a> only supports linking an entire directory to a namespace.</p>
+<p>This may well change in a future release. Until then, you can use <code>2 ⎕FIX 'file://filename'</code> to achieve more or less the same effect as SALT's Load.</p>
+<h5 id="GettingStarted/SALTtoLink/:the-require-comment">The <code>⍝∇:require</code> Comment</h5>
+<p>SALT was implemented before the interpreter added support for the <code>:Require</code> keyword, which can be used to manage the order in which dependencies are loaded. SALT used special comments to implement its own dependency management. Link does not support these comments, you must switch to using the keyword.</p>
+</section><section class="md-typeset" data-url="/GettingStarted/Installation/" id="GettingStarted/Installation/:">
+<h2 id="GettingStarted/Installation/:installation"><span class="pdf-order">2.5 </span>Installation</h2>
+<p>The fully supported version of Link 3.0 is included with Dyalog version 18.1 or later; no installation is required. The instructions on this page only apply if you want to:</p>
+<ul>
+<li>Use Link 3.0 in place of Link 2.0 with Dyalog version 18.0</li>
+<li>Participate in testing pre-releases of Link</li>
+<li>Have some other reason for wanting to use a different version than that which is distributed with APL.</li>
+</ul>
+<p>Link is maintained as an open source project at <a href="https://github.com/dyalog/link">https://github.com/dyalog/link</a>. Once you have downloaded or cloned a particular tag or release of the source code to a folder on your machine, you have two alternatives:</p>
+<ul>
+<li><strong>OVERWRITE the installed Link</strong> by replacing the contents of the <strong>$DYALOG/StartupSession</strong> in your installation with the contents of the StartupSession folder that you have downloaded.</li>
+<li><strong>Set the <code>DYALOGSTARTUPSE</code> environment variable</strong> to point to the StartupSession folder that you have downloaded. This route is recommended if you think you will regularly be updating your copy of Link; if you have done a <code>git clone</code> of the repository, then all you need to do is a <code>git pull</code> and restart APL.</li>
+</ul>
+<p>If you are using Dyalog APL version 18.0, you also need to update the user command file used to invoke Links user commands. This should only need to be done once, even if you subsequently download new versions of Link. Again, there are two options:</p>
+<ul>
+<li>Overwrite the installed file <strong>$DYALOG/SALT/spice/Link.dyalog</strong> with the corresponding file that you have downloaded.</li>
+<li>Place a copy of the downloaded file into your <code>MyUcmds</code> folder, which will cause it to take priority over the installed copy.</li>
+</ul>
+<p>You will need to restart Dyalog APL each time you update these files, in order to pick up the new definitions.</p>
+</section></article><article class="md-content__inner md-typeset" data-url="/Upgradeto30/" id="Upgradeto30/:">
+<h1 id="Upgradeto30/:upgrading-to-link-30"><span class="pdf-order">3. </span>Upgrading to Link 3.0</h1>
+<p>If you are upgrading from Link 2.0 to 3.0, there are many new options and API functions (and corresponding user commands) that are available. The most significant changes are described here.</p>
+<h3 id="Upgradeto30/:breaking-changes"><span class="pdf-order">3.0.1 </span>Breaking Changes</h3>
+<p>Some of the changes have the potential to break existing applications that use Link and require a review of existing code that calls the <a href="#API/:">Link API</a>:</p>
+<ul>
+<li>When specifying the name of a directory, Link 3.0 will not accept a trailing slash (this is reserved for possible future extensions)</li>
+<li>The <code>source=both</code> option has been removed from <a href="#API/Link.Create/:">Link.Create</a>.</li>
+<li>Link.List has been renamed <a href="#API/Link.Status/:">Link.Status</a>.</li>
+<li>When providing a new value for an array using <a href="#API/Link.Fix/:">Link.Fix</a>, Link 3.0 expects the text source form of the array rather than the value of the array (bringing arrays into line with all other cases). To update using a new value, assign the value to the array and call <a href="#API/Link.Add/:">Link.Add</a>.</li>
+<li>If you have defined handlers for custom array representations, there have been significant changes to the arguments to the <code>beforeRead</code> and <code>beforeWrite</code>callback functions. Also, a new <code>getFilename</code> callback has been added. These functions are described in the documentation for <a href="#API/Link.Create/:">Link.Create</a>.</li>
+<li><strong>fastLoad:</strong> When loading very large bodies of code (thousands or tens of thousands of functions), you may need to specify the new <code>fastLoad</code> option on <a href="#API/Link.Create/:">Link.Create</a>, in order to disable the checking of whether the names of items actually defined by source files correspond to the name of the file. Without this option, link creation may slow down so much that it could be considered a breaking change.</li>
+</ul>
+<h3 id="Upgradeto30/:other-significant-changes"><span class="pdf-order">3.0.2 </span>Other Significant Changes</h3>
+<p>The most important new features are:</p>
+<ul>
+<li>The addition of <a href="#API/Link.Pause/:">Link.Pause</a> and <a href="#API/Link.Resync/:">Link.Resync</a> which provide better support for resuming work after a break, especially if the active workspace has been saved and reloaded.</li>
+<li>"Case Coding" of file names, supporting the maintenence of source for names which differ only in case (for example, <code>FOO</code> vs <code>Foo</code>) in case-insensitive file systems.</li>
+<li>The addition of the <a href="#API/Link.LaunchDir/:">Link.LaunchDir</a> API function, which returns the name of the directory that the interpreter was started from, either using the <code>LOAD=</code> or <code>CONFIGFILE=</code>setting.</li>
+</ul>
+<h3 id="Upgradeto30/:release-notes"><span class="pdf-order">3.0.3 </span>Release Notes</h3>
+<p>A detailed list of new features added to recent releases and a few behavioural changes can be found in the <a href="#ReleaseNotes/:">Link 3.0 Release Notes</a>. </p>
+</article><article class="md-content__inner md-typeset" data-url="/ReleaseNotes/" id="ReleaseNotes/:">
+<h1 id="ReleaseNotes/:release-notes"><span class="pdf-order">4. </span>Release Notes</h1>
+<p>This document provides a list of differences between recent versions of Link. For a discussion of differences between 3.0 and 2.0 that you need to be aware of, see <a href="#Upgradeto30/:">Upgrading to Link 3.0</a>.</p>
+<h2 id="ReleaseNotes/:version-30"><span class="pdf-order">4.1 </span>Version 3.0</h2>
+<ul>
+<li>When specifying a directory, a trailing slash is reserved for future extension</li>
+<li>Public functions now throw errors rather than return an error message when they fail.</li>
+<li><a href="#API/Link.Pause/:">Link.Pause</a> has been added</li>
+<li>Link.List has been renamed to <a href="#API/Link.Status/:">Link.Status</a></li>
+<li><a href="#API/Link.Create/:">Link.Create</a>: <code>source</code>=<code>both</code> has been removed. It used to copy from namespace to directory, then the other way.</li>
+<li><a href="#API/Link.Create/:">Link.Create</a>: <code>source</code>=<code>auto</code> has been added. It uses the non-empty side of the link as the source.</li>
+<li><a href="#API/Link.Break/:">Link.Break</a> has a <code>recursive</code> flag to break all children namespaces if they are linked to their own directories</li>
+<li><a href="#API/Link.Import/:">Link.Import</a> and <a href="#API/Link.Export/:">Link.Export</a> have an <code>overwrite</code> flag to allow overwriting a non-empty destination</li>
+<li><a href="#API/Link.Create/:">Link.Create</a> and <a href="#API/Link.Export/:">Link.Export</a> have an <code>arrays</code> modifier to export arrays and a <code>sysVars</code> modifier to export namespace-scoped system variables</li>
+<li><a href="#API/Link.Create/:">Link.Create</a> has a <code>fastLoad</code> flag to reduce the load time by not inspecting source to detect name clashes</li>
+<li><code>beforeWrite</code> had been split into two callbacks : <code>beforeWrite</code> when actually about to write to file, and <code>getFilename</code> when querying the file name to use (see the <a href="#API/Link.Create/:">Link.Create documentation</a> for more details).</li>
+<li><code>beforeWrite</code> and <code>beforeRead</code> arguments have been refactored into a more consistent set.</li>
+<li><a href="#API/Link.Fix/:">Link.Fix</a> now correctly expects text source for arrays (as produced by ⎕SE.Dyalog.Array.Serialise), as documented, whereas Link 2.0 expected the array itself. Similarly, the source (rather than the array itself) is correctly reported by the <code>beforeWrite</code> callback.</li>
+<li>Dyalog APL v18.1 or newer is required for the fixes to the following issues </li>
+<li><a href="https://github.com/Dyalog/link/issues/155">#155 Require keyword does not work</a></li>
+<li><a href="https://github.com/Dyalog/link/issues/149">#149 Link induce status messages</a></li>
+<li><a href="https://github.com/Dyalog/link/issues/148">#148: Fixing linked function removes all monitor/trace points in it</a></li>
+<li><a href="https://github.com/Dyalog/link/issues/144">#144: Link can produce unloadable files</a></li>
+</ul>
+<h2 id="ReleaseNotes/:version-21"><span class="pdf-order">4.2 </span>Version 2.1</h2>
+<p>Version 3.0 was labelled version 2.1 during most of its development, until the end of March 2021. It was renumbered just before the beginning of the distribution of official Beta releases of Dyalog Version 18.1. In other words: if you have version 2.1 installed, this is an early version of what became 3.0 and you should upgrade at your earliest convenience.</p>
+<h2 id="ReleaseNotes/:version-20"><span class="pdf-order">4.3 </span>Version 2.0</h2>
+<ul>
+<li><a href="#API/Link.Break/:">Link.Break</a> has an <code>all</code> flag to break all links</li>
+<li><a href="#API/Link.Version/:">Link.Version</a> reports the current version number  </li>
+<li>Initial public release</li>
+</ul>
+</article><article class="md-content__inner md-typeset" data-url="/IRUXGY3VONZWS33O/" id="IRUXGY3VONZWS33O/:"><h1 id="IRUXGY3VONZWS33O/"><span class="pdf-order">5. </span>Discussion</h1><section class="md-typeset" data-url="/Discussion/TechDetails/" id="Discussion/TechDetails/:">
+<h2 id="Discussion/TechDetails/:technical-details-and-limitations"><span class="pdf-order">5.1 </span>Technical Details and Limitations</h2>
+<p>Link enables the use of text files as application source, by mapping workspace content to directories and files. There are some types of objects that cannot be supported, and a few other limitations that are worth discussing:</p>
+<h3 id="Discussion/TechDetails/:supported-objects"><span class="pdf-order">5.1.1 </span>Supported Objects</h3>
+<p>In the following, for want of a better word, the term <em>object</em> will be used to refer to any kind of named entity that can exist in an APL workspace - not limited to classes or instances.</p>
+<p><strong>Supported:</strong> Link supports objects of name class 2.1 (array), 3.1 (traditional function), 3.2 (d-function), 4.1 (traditional operator), 4.2 (d-operator), 9.1 (namespace), 9.4 (class) and 9.5 (interface).</p>
+<p><strong>Unscripted Namespaces:</strong> Namespaces created with <code>⎕NS</code> or <code>)NS</code> have no source code of their own and are mapped to directories. In Link version 3.0, one endpoint of a link is always an unscripted namespace, and the other endpoint of the link is a directory.</p>
+<p><strong>Scripted Namespaces:</strong> So-called scripted namespaces, created using the editor or <code>⎕FIX</code>, have textual source and are treated the same way as functions and other "code objects". Link 3.0 does not support scripted namespaces, or any other objects that map to a single source file, as endpoints for a link.</p>
+<p>It is likely that this restriction will be lifted in a future version of Link.</p>
+<p><strong>Variables</strong> are ignored by default, because most of them are not part of the source code of an application. However, they may be explicitly saved to file with <a href="/API/Link.Add.md">Link.Add</a>, or with the <code>-arrays</code> modifier of <a href="/API/Link.Create.md">Link.Create</a> and <a href="/API/Link.Export.md">Link.Export</a>.</p>
+<p><strong>Functions and Operators:</strong> Link is not able to represent names which refer to primitive or derived functions or operators, or trains - because the APL interpreter does not have a source form for such items. You will need to define such objects in the source of another function, or a scripted namespace.</p>
+<p><strong>Unsupported:</strong> Link has no support for name classes 2.2 (field), 2.3 (property), 2.6 (external/shared variable), 3.3 (primitive or derived function or train), 4.3 (primitive or derived operator), 3.6 (external function) 9.2 (instance), 9.6 (external class) and 9.7 (external interface).</p>
+<h3 id="Discussion/TechDetails/:other-limitations"><span class="pdf-order">5.1.2 </span>Other Limitations</h3>
+<ul>
+<li>Namespaces must be named. To be precise, it must be true that <code>ns≡(⎕NS⍬)⍎⍕ns</code>. Scripted namespaces must not be anonymous. When creating an unscripted namespace, we recommend using <code>⎕NS</code> dyadically to name the created namespace (for example <code>'myproject' ⎕NS ⍬</code> rather than <code>myproject←⎕NS ⍬</code>). This allows retrieving namespace reference from its display from (for example <code>#.myproject</code> rather than <code>#.[namespace]</code>).</li>
+<li>Link does not support namespace-tagged functions and operators (e.g. <code>foo←namespace.{function}</code>).</li>
+<li>Changes made using <code>←</code>, <code>⎕NS</code>, <code>⎕FX</code>, <code>⎕FIX</code>, <code>⎕CY</code>, <code>)NS</code> and <code>)COPY</code> or the APL line <code>∇</code> editor are not currently detected. For Link to be aware of the change, a call must be made to <a href="/API/Link.Fix.md">Link.Fix</a>. Similarly, deletions with <code>⎕EX</code> or <code>)ERASE</code> must be replaced by a call to <a href="/API/Link.Expunge.md">Link.Expunge</a>.</li>
+<li>Link does not support source files that define multiple names, even though 2∘⎕FIX does support this.</li>
+<li>The detection of external changes to files and directories is currently only supported under .Net and .Net Core. Note that the built-in APL editor <em>will</em> detect changes to source files on all platforms, but not before the editor is opened.</li>
+<li>Source code must not have embedded newlines within character constants, although ⎕FX does allow this. Link will error if this is attempted. This restriction comes because newline characters would be interpreted as a new line when saved as text file. When newline characters are needed in source code, they should be implemented by a call to <code>⎕UCS</code> e.g. <code>newline←⎕UCS 13 10  ⍝ carriage-return + line-feed</code></li>
+<li>Although Link 3.0 will work with version 18.0, Dyalog v18.1 is recommended if it is important that all source be preserved as typed. Earlier versions of APL have small glitches that occasionally lose the source as typed under certain circumstances.</li>
+</ul>
+</section><section class="md-typeset" data-url="/Discussion/Workspaces/" id="Discussion/Workspaces/:">
+<h2 id="Discussion/Workspaces/"><span class="pdf-order">5.2 </span>Workspaces</h2>
+<h3 id="Discussion/Workspaces/:link-versus-workspaces"><span class="pdf-order">5.2.1 </span>Link versus Workspaces</h3>
+<p>As the <em>versus</em> in the heading is intended to imply, the main purpose of Link is to replace many uses of workspaces. Link is intended to make it possible for APL users to move away from the use of workspaces as a mechanism for storing APL source code.</p>
+<h4 id="Discussion/Workspaces/:are-workspaces-dead-now">Are Workspaces Dead Now?</h4>
+<p>No: Workspaces still have many uses, even if they are no longer a recommended mechanism for source code management:</p>
+<ul>
+<li><strong>Distribution:</strong> For large applications, it will be inconvenient or undesirable to ship large collections of source files that are loaded at startup. The use of workspaces as a mechanism for the distribution of packaged collections of code and data is expected to continue.</li>
+<li><strong>Crash Analysis:</strong> When an application fails, it is often useful to save the workspace, complete with execution stack, code and data, for subsequent analysis and sometimes resumption of execution. Dyalog will continue to support this, although we may gradually impose some restrictions, for example requiring the same version and variant of the interpreter in order to resume execution of a saved workspace.</li>
+<li><strong>Pausing work:</strong> In many ways, this is similar to crash analysis: sometimes you need to shut down your machine in the middle of things and resume later, but you don't want to be forced to start from scratch because you have created an interesting scenario with data in the workspace. Saving a workspace allows you to do this.</li>
+</ul>
+<p>With the exception of the scenarios mentioned above, Link is intended to make it unnecessary to save workspaces. All source code changes that you make while editing or tracing your code should immediately end up in text files and be managed using an SCM. The normal workflow is to start each APL session by loading the code into the workspace from source directories. You might want to save a "stub" workspace that contains a very small amount of code that loads everything else from text source, but from version 18.0 of Dyalog APL you can now <a href="/GettingStarted/Setup.md">easily set that up using text files as well</a>, rendering workspaces obsolete as part of your normal development workflow.</p>
+<h4 id="Discussion/Workspaces/:saving-workspaces-containing-links">Saving workspaces containing Links</h4>
+<p>If you do <code>)SAVE</code> a workspace which has active links in it, this creates a potentially confusing situation. Objects defined in the workspace will still contain the information that was created by <code>2 ⎕FIX</code>,  which means that after a re-load, editing may cause the editor itself to update the source files, even though Link has not been activated. If you reload the workspace on a different machine, the source files may not be available, leading to confusing error messages.</p>
+<p>You should always <a href="/API/Link.Break">Link.Break</a> or <a href="/API/Link.Resync">Link.Resync</a> after loading a workspace which was saved with links in it.</p>
+</section><section class="md-typeset" data-url="/Discussion/HowDoesItWork/" id="Discussion/HowDoesItWork/:">
+<h2 id="Discussion/HowDoesItWork/:how-does-link-work"><span class="pdf-order">5.3 </span>How does Link work?</h2>
+<p>Some people need to know what is happening under the covers before they can relax and move on. If you are not one of those people, do not waste any further time on this section. If you do read it, understand that things may change under the covers without notice, and we will not allow a requirement to keep this document up-to-date to delay work on the code. It is reasonably accurate as of April 2021.</p>
+<p><strong>Terminology:</strong> In the following, the term <em>object</em> is used very loosely to refer to functions, operators, namespaces, classes and arrays.</p>
+<h4 id="Discussion/HowDoesItWork/:what-exactly-is-a-link">What Exactly is a Link?</h4>
+<p>A link connects a namespace in the active workspace (which can be the root directory #) to a directory in the file system. When a link is created:</p>
+<ul>
+<li>An entry is created in the table which is stored in the workspace using an undocumented I-Beam (earlier versions used <code>⎕SE.Link.Links</code>, but version 3.0 only uses this for links with an endpoint in <code>⎕SE</code>), recording the endpoints and all options associated with the Link. The command <code>]Link.Status</code> can be used to report this information.</li>
+<li>Depending on which end of the link is specified as the source, APL Source files are created from workspace definitions, or objects are loaded into the workspace from such files. These processes are described in more detail in the following.</li>
+<li>By default, a .NET File System Watcher is created to watch the directory for changes, so they can immediately be replicated in the workspace (if .NET is available)</li>
+</ul>
+<h5 id="Discussion/HowDoesItWork/:creating-apl-source-files-and-directories">Creating APL Source Files and Directories</h5>
+<p>Link writes textual representations of APL objects to UTF-8 text files. Most of the time, it uses the system function <code>⎕SRC</code> to extract the source form writing it to file using <code>⎕NPUT</code>. There are two exceptions to this:</p>
+<ul>
+<li>So-called "unscripted" namespaces which contain other objects but do not themselves have a textual source, are represented as sub-directories in the file system (which may contain source files for the objects within the namespace).</li>
+<li>Arrays are converted to source form using the function <code>⎕SE.Dyalog.Array.Serialise</code>. It is expected that the APL language engine will support the "literal array notation", and that <code>⎕SRC</code>will one day be extended to perform this function, but there is as yet no schedule for this.</li>
+</ul>
+<h5 id="Discussion/HowDoesItWork/:loading-apl-objects-from-source">Loading APL Objects from Source</h5>
+<p>As a general rule, Link loads code into the workspace using <code>2 ⎕FIX 'file://...'</code>. </p>
+<p>When you are watching both sides of a link, Link delegates the work of tracking the links to the interpreter. In this case, editing objects will cause the editor itself (not Link) to update the source file. You can inspect the links which are maintained by the interpreter using a family of I-Beams numbered 517x. When a <em>new</em> function, operator, namespace or class is created, a hook in the editor calls Link code which generates a new file and sets up the link.</p>
+<ul>
+<li>If .NET is available, Link uses a File System Watcher to monitor linked directories and immediately react to file creation, modification or deletion.</li>
+</ul>
+<h4 id="Discussion/HowDoesItWork/:the-source-of-link">The Source of Link</h4>
+<p>Link consists of a set of API functions which are loaded into the namespace <code>⎕SE.Link</code> when APL starts, from <strong>$DYALOG/StartupSession/Link</strong>. The user command file <strong>$DYALOG/SALT/SPICE/Link.dyalog</strong> provides access to the interactive user command covers that exist for most of the API functions. The code is included with installations of Dyalog version 18.1 or later, if you want to use Link with version 18.0 or pick Link up from GitHub, see the <a href="/GettingStarted/Installation.md">installation instructions</a>.</p>
+<h4 id="Discussion/HowDoesItWork/:the-crawler">The Crawler</h4>
+<p>In a future version of Link, hopefully available during 2021, an optional and configurable <a href="/Crawler.md">Crawler</a> will run in the background occasionally compare linked namespaces and directories using the same logic as <a href="/API/Link.Resync.md">Link.Resync</a>, and deal with anything that might have been missed by the automatic mechanisms. This will be especially useful if:</p>
+<ul>
+<li>The File System Watcher is not available on your platform</li>
+<li>You add functions or operators to the active workspace without using the editor, for example using <code>)COPY</code> or dfn assignment.</li>
+</ul>
+<p>The document <a href="#Discussion/TechDetails/:">Technical Details and Limitations</a> provides much more information about the type of APL objects that are supported by Link.</p>
+<h3 id="Discussion/HowDoesItWork/:breaking-links"><span class="pdf-order">5.3.1 </span>Breaking Links</h3>
+<p>If <a href="/API/Link.Break.md">Link.Break</a> is used to explicitly break an existing Link, the entry is removed from <code>⎕SE.Link.Links</code>, and the namespace reverts to being a completely "normal" namespace in the workspace. If file system watch was active, the watcher is disabled. Any information that the interpreter was keeping about connections to files is removed using <code>5178⌶</code>. None of the definitions in the namespace are modified by the process of breaking a link.</p>
+<p>If you delete a linked namespace using <code>)ERASE</code> or <code>⎕EX</code>, Link may not immediately detect that this has happened. However, if you call <code>Link.Status</code>, or make a change to a watch file that causes the file system watched to attempt to update the namespace, Link will discover that something is amiss, issue a warning, and delete the link.</p>
+<p>If you completely destroy the active workspace using <code>)LOAD</code> or <code>)CLEAR</code>, all links will be deleted.</p>
+</section><section class="md-typeset" data-url="/Discussion/History/" id="Discussion/History/:">
+<h2 id="Discussion/History/:history"><span class="pdf-order">5.4 </span>History</h2>
+<p>Link 3.0, released in 2021, is another step in the journey from binary workspaces to APL source in text files.</p>
+<h4 id="Discussion/History/:workspaces">Workspaces</h4>
+<p>Historically, APL systems have used <em>saved workspaces</em> as the way to store the current state of the interpreter in a binary file which contains a collection of code and data. In many ways, a workspace is similar to a workbook saved by a spreadsheet application, a very convenient package that contains everything the application needs to run. Saving the workspace at the end of a run preserves updated data, as well as any code changes that might have been made.</p>
+<h4 id="Discussion/History/:component-files-and-sql-databases">Component Files and SQL Databases</h4>
+<p>Workspaces are very convenient, but the binary format makes them awkward if you want to compare, or otherwise manage different versions of the source code - or the data, for that matter. Data quickly ended up in component files or other storage mechanism. As teams started writing larger systems, many development teams also created their own source code management systems, typically storing multiple versions of code in component files or SQL tables.</p>
+<p>These SCM's served large developer teams well for several decades. However, none of them became tools that were shared by the APL community, and they all suffered from the fundamental problem of using binary formats.</p>
+<h4 id="Discussion/History/:salt-the-simple-apl-library-toolkit">SALT - the Simple APL Library Toolkit</h4>
+<p>In 2006, Dyalog APL Version 11.0 introduced Classes and the ability to represent Namespaces as text "scripts". With that release, Dyalog APL included a tool known as <a href="https://docs.dyalog.com/18.1/SALT-20User-20Guide.pdf">SALT</a>, which supported the use of Unicode text files as backing for the source of not only classes and namespaces, but functions, operators and variables as well. At the same time, a component named SPICE added user commands to Dyalog APL, using text source files which implemented a specific API, based on SALT's file handling.</p>
+<p>SALT is Link's direct predecessor, and has many of the same features as Link:</p>
+<ul>
+<li>The ability to load entire directory structures into the workspace as namespaces</li>
+<li>A tool called "Snap", which would write all or selected parts of a workspace to corresponding source files.</li>
+<li>A hook in the APL system editor, which would update source files as soon as code was edited, without requiring a separate save operation.</li>
+<li>Startup processing of files with a <code>.dyapp</code> extension, to allow launching applications from text files without requiring a "boot workspace".</li>
+</ul>
+<h4 id="Discussion/History/:link-20">Link 2.0</h4>
+<p>After SALT had grown organically for more than a decade, it felt like time for a fresh start, and Link was born. The first version of Link that was released to the general public was 2.0. The main differences between Link and SALT are:</p>
+<ul>
+<li>Link delegates the task of maintaining information about external source files to the APL interpreter, rather than using a trailing comment in functions and operators or "hidden" namespaces for classes and namespaces to track this information.</li>
+<li>New interpreter functionality based on <code>2 ⎕FIX</code> makes it possible for the interpreter to preserve source code exactly as typed, when an external source file is used.</li>
+<li>A file system watcher added support for using external editors and immediately replicating the effect of SCM system actions, such as a git pull or revert operation, inside the active workspace.</li>
+<li>Rather than using the extension <code>.dyalog</code> for all source, Link uses different extensions for different types of source, such as <code>.aplf</code> for functions, <code>.apln</code> for namespaces, and <code>.apla</code> for arrays.</li>
+<li>Use of a model of the proposed <a href="#Discussion/History/:">Literal Array Notation</a> to represent arrays, rather than the notation used by SALT.</li>
+<li>
+<p>We hope to add support for the array notation to the Dyalog APL interpreter in a future release.</p>
+</li>
+<li>
+<p>Link has no source code management features; the expectation is that users who require SCM will combine Link with an external SCM such as Git or SVN</p>
+</li>
+<li>SALT included a simple mechanism for storing and comparing multiple versions of the source for an object by injecting digits into the file name.</li>
+</ul>
+<h4 id="Discussion/History/:link-30">Link 3.0</h4>
+<p>Link 3.0 is the first major revision of Link. It adds:</p>
+<ul>
+<li>Support for saving workspaces containing links code and resuming work after a break.</li>
+<li>Support for names which differ only in case (for example, <code>FOO</code> vs <code>Foo</code>) in case-insensitive file systems, by adding "case coding" information to the file name.</li>
+<li>A new <code>Link.LaunchDir</code> API function, that makes it straightforward to replace the old SALT <code>.dyapp</code> files with new features in the interpreter, that make it possible to launch the interpreter using a configuration file or single APL source file.</li>
+</ul>
+<p>A more complete description of the differences between Link 2.0 and 3.0 are described in the guide on <a href="/Upgradeto30.md">upgrading from 2.0 to 3.0</a>.</p>
+<h4 id="Discussion/History/:the-future">The Future</h4>
+<p>The Link road map currently includes the following goals</p>
+<ul>
+<li>Adding the <a href="/Crawler.md">Crawler</a>, which will automatically run <a href="/API/Link.Resync.md">Link.Resync</a> in the background, in order to detect and help eliminate differences between the contents of linked namespaces and the corresponding directories and can replace the File System Watcher in environments where it is not available.</li>
+<li>Eliminating the use of SALT, with a new implementation of user commands and other mechanisms for loading source code into the interpreter, based on Link rather than SALT.</li>
+<li>Support for linking individual source files. Link 3.0 is only able to link a namespace to a directory. There are situations where it is practical to create a link to a single source file, particularly in the case of a namespace.</li>
+<li>Improving integration with the APL Interpreter so that the editor will honour a Pause.</li>
+</ul>
+<p>Over time, it is a strategic goal for Dyalog to move more of the work done by Link into the APL interpreter, such as:</p>
+<ul>
+<li>Serialisation and Deserialisation of arrays, using the literal array notation</li>
+<li>File System Watching or other mechanisms for detecting changes to source at both ends of a link</li>
+</ul>
+</section></article><article class="md-content__inner md-typeset" data-url="/IFIES/" id="IFIES/:"><h1 id="IFIES/"><span class="pdf-order">6. </span>API</h1><section class="md-typeset" data-url="/API/" id="API/:">
+<h2 id="API/"><span class="pdf-order">6.1 </span>Index</h2>
+<p>The Link API functions are all found in <code>⎕SE.Link</code>. Typically, API functions take a character
+vector or a nested vector as a right argument. The left argument may either be a namespace containing option values, or an array of character vectors. Namespaces may be specified by reference. For more details on setting options, look below the following table:</p>
+<h4 id="API/:basic-api-function-reference">Basic API Function reference</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Right Argument(s)</th>
+<th>Left Argument(s)</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#API/Link.Add/:">Add</a><sup><code>]</code></sup></td>
+<td>items</td>
+<td><em><none></none></em></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Break/:">Break</a><sup><code>]</code></sup></td>
+<td>namespaces</td>
+<td>options: <code>all</code> <code>exact</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Create/:">Create</a><sup><code>]</code></sup></td>
+<td>namespace directory</td>
+<td>options: <code>source</code> <code>watch</code> [and <a href="#API/Link.Create/:common-options">many more</a>]</td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Export/:">Export</a><sup><code>]</code></sup></td>
+<td>namespace directory</td>
+<td>options: <code>overwrite</code> <code>caseCode</code> <code>arrays</code> <code>sysVars</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Expunge/:">Expunge</a><sup><code>]</code></sup></td>
+<td>items</td>
+<td><em><none></none></em></td>
+<td>boolean array</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Import/:">Import</a><sup><code>]</code></sup></td>
+<td>namespace directory</td>
+<td>options: <code>overwrite</code> <code>flatten</code> <code>fastLoad</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.LaunchDir/:">LaunchDir</a></td>
+<td>none</td>
+<td>none</td>
+<td>directory name</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Pause/:">Pause</a><sup><code>]</code></sup></td>
+<td><em><none></none></em></td>
+<td><em><none></none></em></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Refresh/:">Refresh</a><sup><code>]</code></sup></td>
+<td>namespace</td>
+<td>options: <code>source</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Resync/:">Resync</a><sup><code>]</code></sup></td>
+<td><em><none></none></em></td>
+<td>options: <code>confirm</code> <code>pause</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Status/:">Status</a><sup><code>]</code></sup></td>
+<td>namespace</td>
+<td>options: <code>extended</code></td>
+<td>message</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Version/:">Version</a></td>
+<td><em><none></none></em></td>
+<td><em><none></none></em></td>
+<td>version number as string</td>
+</tr>
+</tbody>
+</table>
+<p><sup><code>]</code></sup> These functions have <a href="#API/:user-commands">user command covers</a>.</p>
+<h4 id="API/:advanced-api-function-reference">Advanced API Function reference</h4>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Right Argument(s)</th>
+<th>Left Argument(s)</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#API/Link.CaseCode/:">CaseCode</a></td>
+<td>filename</td>
+<td><em>&lt;none&gt;</em></td>
+<td>case-coded filename</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Fix/:">Fix</a></td>
+<td>source</td>
+<td>array: namespace name oldname</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><a href="#API/Link.GetFileName/:">GetFileName</a><sup><code>]</code></sup></td>
+<td>items</td>
+<td><em>&lt;none&gt;</em></td>
+<td>filenames</td>
+</tr>
+<tr>
+<td><a href="#API/Link.GetItemName/:">GetItemName</a><sup><code>]</code></sup></td>
+<td>filenames</td>
+<td><em>&lt;none&gt;</em></td>
+<td>items</td>
+</tr>
+<tr>
+<td><a href="#API/Link.Notify/:">Notify</a></td>
+<td>event filename oldfilename</td>
+<td><em>&lt;none&gt;</em></td>
+<td><em>&lt;none&gt;</em></td>
+</tr>
+<tr>
+<td><a href="#API/Link.StripCaseCode/:">StripCaseCode</a></td>
+<td>filename</td>
+<td><em>&lt;none&gt;</em></td>
+<td>filename without case code</td>
+</tr>
+<tr>
+<td><a href="#API/Link.TypeExtension/:">TypeExtension</a></td>
+<td>name class</td>
+<td>option namespace used for <a href="#API/Link.Create/:">Create</a></td>
+<td>file extension (without leading <code>'.'</code>)</td>
+</tr>
+</tbody>
+</table>
+<p><sup><code>]</code></sup> These functions have <a href="#API/:user-commands">user command covers</a>.</p>
+<h4 id="API/:option-namespaces">Option Namespaces</h4>
+<p>Some API functions accept an option namespace as
+the left argument. For example, to create a link with non-default <code>source</code> and <code>flatten</code> options,
+you would write:</p>
+<pre><code class="language-apl">      options←⎕NS ''                                    ⍝ create empty namespace
+      options.(source flatten)←'dir' 1                  ⍝ set two named options
+      options ⎕SE.Link.Create 'myapp' '/sources/myapp'  ⍝ namespace and director name on the right, options on left
+</code></pre>
+<h4 id="API/:user-commands">User commands</h4>
+<p>Some API functions have a corresponding user command, to make them a little easier to use interactively. The API functions with user command covers are indicated with <sup><code>]</code></sup> in the above tables. These user commands all take exactly the same arguments and options as the API functions, specified using user command syntax. The Link.Create call above would thus be written:</p>
+<pre><code class="language-apl">      ]LINK.Create myapp /sources/myapp -source=dir -flatten
+</code></pre>
+<p><strong><em>Specifying extensions:</em></strong> Two options require arrays identifying file extensions: <code>codeExtensions</code>, <code>customExtensions</code> and <code>typeExtensions</code>. For convenience, the <code>]Link.Create</code> user command accepts the <em>name</em> of a variable containing the array, rather than the array values. </p>
+</section><section class="md-typeset" data-url="/API/Link.Add/" id="API/Link.Add/:">
+<h2 id="API/Link.Add/:linkadd"><span class="pdf-order">6.2 </span>Link.Add</h2>
+<pre><code>]LINK.Add &lt;items&gt;
+
+msg ← ⎕SE.Link.Add items
+</code></pre>
+<p>This function allows you to add one or more existing APL items to the link, creating the appropriate representation in the linked directory. A source file will be created/updated whether the linked namespace is watched or not.</p>
+<p>This is useful to write a new or modified array to a source file: arrays are normally not written to file by Link.</p>
+<p>It is also useful when a change has been made to a linked item using any mechanism other than the APL editor, for example the definition of a new dfn using assignment, or the use of <code>)COPY</code> to bring new objects into the workspace.</p>
+<p>Note: You can create or update an item from source while adding it to the Link by calling <a href="#API/Link.Fix/:">Link.Fix</a></p>
+<h5 id="API/Link.Add/:arguments">Arguments</h5>
+<ul>
+<li>APL item name(s)</li>
+</ul>
+<h5 id="API/Link.Add/:result">Result</h5>
+<ul>
+<li>String describing items that were:</li>
+<li>added (they belong in a linked namespace and were successfully added)</li>
+<li>not linked (they do not belong to a linked namespace)</li>
+<li>not found (the name doesn't exist at all)</li>
+</ul>
+</section></article></body></html>

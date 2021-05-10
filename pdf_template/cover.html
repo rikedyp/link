@@ -1,0 +1,44 @@
+<article id="doc-cover">
+	<style>
+        @page {
+            size: A4;
+            margin: 0mm;
+        }
+		* {font-family: "Atkinson Hyperlegible";}
+		article#doc-cover > .wrapper.upper > h1,h2 {
+            position: relative;
+            top: -70px;
+			font-size: 25pt;
+			float: right;
+			line-height: 1;
+			padding: 0;
+			margin: 0;
+		}
+		article#doc-cover h1,h2 {border-bottom: none;}
+        article#doc-cover > .wrapper.logo {padding:0; margin:0;}
+        article#doc-cover > .wrapper > .logo {
+            height: 450px;
+            width: 100vw;
+            padding: 0;
+            margin: 0;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+	</style>
+	<div class="wrapper upper">
+			<h1>Link</h1>
+			<h1>User Guide</h1>
+			<h2>{{ cover_subtitle | e }}</h2>
+	</div>
+	{% if cover_logo is defined %}
+		<div class="wrapper logo">
+			<div class="logo" style="background-image: url({{ cover_logo | to_url }});"></div>
+		</div>
+	{% else %}
+			<div class="wrapper"></div>
+	{% endif %}
+	<div class="properties">	</div>
+</article>
+<article id ="doc-info">
+	<div class="wrapper lower">Look at all this good informations</div>
+</article>
