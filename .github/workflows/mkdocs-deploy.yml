@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - v3docs-pdf
   pull_request:
   workflow_dispatch:
 jobs:
