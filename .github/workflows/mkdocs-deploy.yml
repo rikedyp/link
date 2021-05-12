@@ -31,13 +31,14 @@ jobs:
           python3 -m pip install mkdocs            # install mkdocs 
           python3 -m pip install mkdocs-material   # install material theme
           python3 -m pip install mike              # install mike for versioning
-          python3 -m pip install mkdocs-with-pdf   # install with-pdf plugin for mkdocs
-      - name: Build site      
+          python3 -m pip install mkdocs-with-pdf   # install with-pdf plugin for mkdocs    
+      - name: set up user
+        uses: fregante/setup-git-user@v1
+      - name: Build site                 
         run: |
-          git config user.name "name"
           mike deploy ${{ steps.majmin.outputs.version }} latest 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v3
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./site
