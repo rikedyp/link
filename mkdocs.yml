@@ -46,11 +46,3 @@ theme:
   name: material
 plugins:
     - search
-    - with-pdf:
-        custom_template_path: pdf_template
-        cover_logo: https://github.com/rikedyp/link/raw/v3docs-pdf/docs/img/cover_swirl.jpg
-        font_family: Atkinson Hyperlegible
-        output_path: "Link User Guide.pdf"
-        debug_html: false
-        author: ""
-        toc_title: Contents
