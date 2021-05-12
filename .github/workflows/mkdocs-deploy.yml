@@ -36,9 +36,4 @@ jobs:
         uses: fregante/setup-git-user@v1
       - name: Build site                 
         run: |
-          mike deploy ${{ steps.majmin.outputs.version }} latest 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./site
+          mike deploy --push --update-aliases ${{ steps.majmin.outputs.version }} latest 
