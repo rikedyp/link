@@ -36,4 +36,4 @@ jobs:
         uses: fregante/setup-git-user@v1
       - name: Build site                 
         run: |
-          mike deploy --push ${{ steps.majmin.outputs.version }} latest 
+          mike deploy --push --update-aliases ${{ steps.majmin.outputs.version }} latest 
