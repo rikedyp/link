@@ -1,27 +1,31 @@
 # Getting Started
 
-### Linking to an Existing Directory
+## Starting from text files
+Use [Link.Create](/API/Link.Create) to Link a directory containing text source to a namespace in the active workspace.
 
-In daily use, the assumption is that your source already exists in one or more file system folders that you are managing using an SCM like Git, or taking copies of at suitable intervals using some other mechanism. [Link.Create](/API/Link.Create.md) loads the source code into the workspace so that you can work with it, keeping the content of the workspace synchronised with the source files, no matter which side of the link you make changes.
+The following example loads APL code from the folder **/home/sally/myapp** into a namespace called `myapp`.
 
-For example, the following user command load all the code in the folder `/home/sally/myapp` into a namespace called `myapp` , creating the namespace if it does not exist: 
-
-```      apl
-      ]link.Create myapp /home/sally/myapp
+```APL
+      ⎕SE.Link.Create myapp '/home/sally/myapp'
 ```
 
-The first argument to the user command, and to the corresponding API function `⎕SE.Link.Create` is the name of a namespace (in the case of the function you could also use a reference to an existing namespace). The second argument is a directory name.
+For daily use in the session, it might be more convenient to use the user command:
+```APL
+      ]LINK.Create myapp /home/sally/myapp
+```
 
-### Starting with a Workspace
-
+## Starting from a workspace file
 If your existing code is in a workspace rather than in source files, you may want to skip forward and read the section on [converting a workspace to source files](WStoLink.md) before continuing.
 
-### Starting a New project
+## Importing code without creating a link
+Sometimes you want to experiment and make modifications to your code without saving those changes. Use [Link.Import](/API/Link.Import) to bring code from text source files into the active workspace.
+
+## Starting a New project
 
 Of course, you might be one of those lucky people who is starting a completely new project. In this casem you can still use `Link.Create`, but you will need to create either the namespace or the folder (or both) first. For the command to succeed, at least one of them needs to exist and exactly one of them needs to contain some code.
 
-* If neither of them exist, Link.Create will reject the request on suspicion that there is a typo, in order to avoid silently creating an empty directory by mistake.
-* If both of them exist AND contain code, and the code is not identical on both sides, Link.Create will fail and you will need to specify the  `source` option, whether the namespace or the directory should be considered to be the source. Incorrectly specifying the source will potentially overwrite existing content on the other side, so use this with extreme caution!
+- If neither of them exist, Link.Create will reject the request on suspicion that there is a typo, in order to avoid silently creating an empty directory by mistake.
+- If both of them exist AND contain code, and the code is not identical on both sides, Link.Create will fail and you will need to specify the  `source` option, whether the namespace or the directory should be considered to be the source. Incorrectly specifying the source will potentially overwrite existing content on the other side, so use this with extreme caution!
 
 To illustrate, we will create a namespace and populate it with two dfns and one tradfn, in order to have something to work with. In this example, the functions are created using APL expressions; under normal use the functions would probably be created using the editor, or perhaps loaded or copied from an existing workspace.
 

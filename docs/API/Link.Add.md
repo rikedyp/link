@@ -1,8 +1,13 @@
 # Link.Add
 
-    ]LINK.Add <items>
-    
-    msg ← ⎕SE.Link.Add items                                      
+## Syntax
+```text
+message ← ⎕SE.Link.Add items
+```
+User command:
+```text
+]LINK.Add <items>
+```
 
 This function allows you to add one or more existing APL items to the link, creating the appropriate representation in the linked directory. A source file will be created/updated whether the linked namespace is watched or not.
 
@@ -12,11 +17,11 @@ It is also useful when a change has been made to a linked item using any mechani
 
 Note: You can create or update an item from source while adding it to the Link by calling [Link.Fix](Link.Fix.md)
 
-#### Arguments
+## Arguments
 
 - APL item name(s)
 
-#### Result
+## Result
 
 - String describing items that were:
   - added (they belong in a linked namespace and were successfully added)

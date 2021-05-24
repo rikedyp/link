@@ -1,22 +1,21 @@
-site_name: Link 3.0
+site_name: Link User Guide
 nav:
-  - index.md
-    
-  - Getting Started:
-    - GettingStarted/index.md
-    - GettingStarted/Setup.md
-    - GettingStarted/WStoLink.md
-    - GettingStarted/SALTtoLink.md
-    - GettingStarted/Installation.md
-  
-  - Upgradeto30.md
-  - ReleaseNotes.md
-  
-  - Discussion:
+  - Introduction:
+    - Introduction/index.md
     - Discussion/TechDetails.md
     - Discussion/Workspaces.md
     - Discussion/HowDoesItWork.md
     - Discussion/History.md
+    
+  - Installation and Upgrade:
+    - GettingStarted/Installation.md
+    - Upgradeto30.md
+    
+  - Usage:
+    - GettingStarted/index.md
+    - GettingStarted/Setup.md
+    - GettingStarted/WStoLink.md
+    - GettingStarted/SALTtoLink.md
     
   - API:
     - API/index.md
@@ -39,8 +38,18 @@ nav:
     - API/Link.StripCaseCode.md
     - API/Link.TypeExtension.md
     - API/Link.Version.md
+  
+  - ChangeHistory.md
     
 theme:
   features:
     - navigation.indexes
+    - navigation.sections
   name: material
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - abbr

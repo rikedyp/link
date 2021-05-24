@@ -1,16 +1,20 @@
-# History
+# History of source files as text in Dyalog
 
 Link 3.0, released in 2021, is another step in the journey from binary workspaces to APL source in text files.
 
 ### Workspaces
 
-Historically, APL systems have used *saved workspaces* as the way to store the current state of the interpreter in a binary file which contains a collection of code and data. In many ways, a workspace is similar to a workbook saved by a spreadsheet application, a very convenient package that contains everything the application needs to run. Saving the workspace at the end of a run preserves updated data, as well as any code changes that might have been made.
+Historically, APL systems have used *saved workspaces* as the way to store the current state of the interpreter in a binary file which contains a collection of code and data. In many ways, a workspace is similar to a workbook saved by a spreadsheet application; a very convenient package that contains everything the application needs to run. Saving the workspace at the end of a run preserves updated data, as well as any code changes that might have been made.
 
 ### Component Files and SQL Databases
 
-Workspaces are very convenient, but the binary format makes them awkward if you want to compare, or otherwise manage different versions of the source code - or the data, for that matter. Data quickly ended up in component files or other storage mechanism. As teams started writing larger systems, many development teams also created their own source code management systems, typically storing multiple versions of code in component files or SQL tables.
+Workspaces are very convenient, but the binary format makes them awkward if you want to compare, or otherwise manage, different versions of the source code - or the data, for that matter. Users preferred to store their data in component files or other storage mechanisms. As teams started writing larger systems, many development teams also created their own source code management systems, typically storing multiple versions of code in component files or SQL tables.
 
-These SCM's served large developer teams well for several decades. However, none of them became tools that were shared by the APL community, and they all suffered from the fundamental problem of using binary formats.
+These SCMs served large developer teams well for several decades. However, none of them became tools that were shared by the APL community, and they all suffered from the fundamental problem of using binary formats.
+
+*[SQL]: Structured Query Language
+*[SCM]: Source Code Manager
+*[SCMs]: Source Code Managers
 
 ### SALT - the Simple APL Library Toolkit
 
@@ -25,7 +29,7 @@ SALT is Link's direct predecessor, and has many of the same features as Link:
 
 ### Link 2.0
 
-After SALT had grown organically for more than a decade, it felt like time for a fresh start, and Link was born. The first version of Link that was released to the general public was 2.0. The main differences between Link and SALT are:
+After SALT had grown organically for more than a decade, it was decided that this functionality should be re-implemented in a new system: the Link project began. The first version of Link that was released to the general public was 2.0. The main differences between Link and SALT are:
 
 * Link delegates the task of maintaining information about external source files to the APL interpreter, rather than using a trailing comment in functions and operators or "hidden" namespaces for classes and namespaces to track this information.
   * New interpreter functionality based on `2 ⎕FIX` makes it possible for the interpreter to preserve source code exactly as typed, when an external source file is used.

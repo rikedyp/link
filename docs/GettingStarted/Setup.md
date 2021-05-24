@@ -1,6 +1,10 @@
-# Setting up your Environment
+# Setting Up Your Environment
 
-With a small project, you can get by using `]Link.Create` and/or `Link.Import` to bring your source into the workspace in order to work with it. However, even in a small project, this quickly gets tedious, and as the project grows, you may want to load code from more that one directory, and perhaps run some code in order to set things up or even start the application. Fortunately, the [Link API](/API/index.md) provides all the functions that you need to automate the setup.
+With a small project, you can get by using [`Link.Create`](/API/Link.Create) and/or [`Link.Import`](/API/Link.Import) to bring your source into the workspace in order to work with it. However, even in a small project, this quickly gets tedious, and as the project grows, you may want to load code from more that one directory, and perhaps run some code in order to set things up or even start the application. Fortunately, the [Link API](/API/index.md) provides all the functions that you need to automate the setup.
+
+## Description of the functions and procedure for automating set up
+
+## Worked example
 
 To illustrate, we will create a small application that uses the stats library that we created in the [introduction](index.md). We'll put the application into a namespace called `linkdemo`:
 

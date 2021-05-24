@@ -1,6 +1,6 @@
 # Technical Details and Limitations
 
-Link enables the use of text files as application source, by mapping workspace content to directories and files. There are some types of objects that cannot be supported, and a few other limitations that are worth discussing:
+Link enables the use of text files as application source by mapping workspace content to directories and files. There are some types of objects that cannot be supported, and a few other limitations to be aware of:
 
 ## Supported Objects
 
@@ -14,7 +14,7 @@ In the following, for want of a better word, the term *object* will be used to r
 
 It is likely that this restriction will be lifted in a future version of Link.
 
-**Variables** are ignored by default, because most of them are not part of the source code of an application. However, they may be explicitly saved to file with [Link.Add](/API/Link.Add.md), or with the `-arrays` modifier of [Link.Create](/API/Link.Create.md) and [Link.Export](/API/Link.Export.md).
+**Variables** are ignored by default, because most of them are not part of the source code of an application. However, they may be explicitly saved to file with [Link.Add](/API/Link.Add), or with the `-arrays` modifier of [Link.Create](/API/Link.Create) and [Link.Export](/API/Link.Export).
 
 **Functions and Operators:** Link is not able to represent names which refer to primitive or derived functions or operators, or trains - because the APL interpreter does not have a source form for such items. You will need to define such objects in the source of another function, or a scripted namespace.
 
@@ -22,10 +22,10 @@ It is likely that this restriction will be lifted in a future version of Link.
 
 ## Other Limitations
 
-* Namespaces must be named. To be precise, it must be true that `ns≡(⎕NS⍬)⍎⍕ns`. Scripted namespaces must not be anonymous. When creating an unscripted namespace, we recommend using `⎕NS` dyadically to name the created namespace (for example `'myproject' ⎕NS ⍬` rather than `myproject←⎕NS ⍬`). This allows retrieving namespace reference from its display from (for example `#.myproject` rather than `#.[namespace]`).
-* Link does not support namespace-tagged functions and operators (e.g. `foo←namespace.{function}`).
-* Changes made using `←`, `⎕NS`, `⎕FX`, `⎕FIX`, `⎕CY`, `)NS` and `)COPY` or the APL line `∇` editor are not currently detected. For Link to be aware of the change, a call must be made to [Link.Fix](/API/Link.Fix.md). Similarly, deletions with `⎕EX` or `)ERASE` must be replaced by a call to [Link.Expunge](/API/Link.Expunge.md).
-* Link does not support source files that define multiple names, even though 2∘⎕FIX does support this.
-* The detection of external changes to files and directories is currently only supported under .Net and .Net Core. Note that the built-in APL editor *will* detect changes to source files on all platforms, but not before the editor is opened.
-* Source code must not have embedded newlines within character constants, although ⎕FX does allow this. Link will error if this is attempted. This restriction comes because newline characters would be interpreted as a new line when saved as text file. When newline characters are needed in source code, they should be implemented by a call to `⎕UCS` e.g. `newline←⎕UCS 13 10  ⍝ carriage-return + line-feed`
-* Although Link 3.0 will work with version 18.0, Dyalog v18.1 is recommended if it is important that all source be preserved as typed. Earlier versions of APL have small glitches that occasionally lose the source as typed under certain circumstances.
+- Namespaces must be named. To be precise, it must be true that `ns≡(⎕NS⍬)⍎⍕ns`. Scripted namespaces must not be anonymous. When creating an unscripted namespace, we recommend using `⎕NS` dyadically to name the created namespace (for example `'myproject' ⎕NS ⍬` rather than `myproject←⎕NS ⍬`). This allows retrieving namespace reference from its display from (for example `#.myproject` rather than `#.[namespace]`).
+- Link does not support namespace-tagged functions and operators (e.g. `foo←namespace.{function}`).
+- Changes made using `←`, `⎕NS`, `⎕FX`, `⎕FIX`, `⎕CY`, `)NS` and `)COPY` or the APL line `∇` editor are not currently detected. For Link to be aware of the change, a call must be made to [Link.Fix](/API/Link.Fix.md). Similarly, deletions with `⎕EX` or `)ERASE` must be replaced by a call to [Link.Expunge](/API/Link.Expunge.md).
+- Link does not support source files that define multiple names, even though 2∘⎕FIX does support this.
+- The detection of external changes to files and directories is currently only supported under .Net and .Net Core. Note that the built-in APL editor *will* detect changes to source files on all platforms, but not before the editor is opened.
+- Source code must not have embedded newlines within character constants, although ⎕FX does allow this. Link will error if this is attempted. This restriction comes because newline characters would be interpreted as a new line when saved as text file. When newline characters are needed in source code, they should be implemented by a call to `⎕UCS` e.g. `newline←⎕UCS 13 10  ⍝ carriage-return + line-feed`
+- Although Link 3.0 will work with version 18.0, Dyalog v18.1 is recommended if it is important that all source be preserved as typed. Earlier versions of APL may occasionally lose the source as typed under certain circumstances.

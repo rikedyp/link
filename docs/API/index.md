@@ -1,7 +1,20 @@
-The Link API functions are all found in ```⎕SE.Link```. Typically, API functions take a character
+# API Overview
+The Link API functions all reside in `⎕SE.Link`.
+
+The general syntax for Link API functions is as follows:
+```APL
+      options ⎕SE.Link.FnName args
+```
+where:
+
+- `options` is a namespace containing [optional parameters](#option-namespaces). Only certain functions accept an options namespace.
+- `FnName` is the name of the API function
+- `args` is either a character vector or a nested vector as described in the help section for that API function.
+
+Typically, API functions take a character
 vector or a nested vector as a right argument. The left argument may either be a namespace containing option values, or an array of character vectors. Namespaces may be specified by reference. For more details on setting options, look below the following table:
 
-### Basic API Function reference
+## Basic API Function reference
 
 Function                                              | Right Argument(s)          | Left Argument(s)                                                                | Result 
 ------------------------------------------------------|----------------------------|---------------------------------------------------------------------------------|-------
@@ -20,7 +33,7 @@ Function                                              | Right Argument(s)       
 
  <sup>`]`</sup> These functions have [user command covers](#user-commands).
 
-### Advanced API Function reference 
+## Advanced API Function reference 
 
 Function                                              | Right Argument(s)          | Left Argument(s)                               | Result 
 ------------------------------------------------------|----------------------------|------------------------------------------------|-------
@@ -34,7 +47,7 @@ Function                                              | Right Argument(s)       
 
  <sup>`]`</sup> These functions have [user command covers](#user-commands).
 
-### Option Namespaces
+## Option Namespaces
 
 Some API functions accept an option namespace as
 the left argument. For example, to create a link with non-default `source` and `flatten` options,
@@ -46,7 +59,7 @@ you would write:
       options ⎕SE.Link.Create 'myapp' '/sources/myapp'  ⍝ namespace and director name on the right, options on left
 ```
 
-### User commands
+## User commands
 
 Some API functions have a corresponding user command, to make them a little easier to use interactively. The API functions with user command covers are indicated with <sup>`]`</sup> in the above tables. These user commands all take exactly the same arguments and options as the API functions, specified using user command syntax. The Link.Create call above would thus be written:
 ```apl
