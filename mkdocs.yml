@@ -1,7 +1,7 @@
 site_name: Link User Guide
 nav:
   - Introduction:
-    - Introduction/index.md
+    - index.md
     - Discussion/TechDetails.md
     - Discussion/Workspaces.md
     - Discussion/HowDoesItWork.md
@@ -43,7 +43,6 @@ nav:
     
 theme:
   features:
-    - navigation.indexes
     - navigation.sections
   name: material
 

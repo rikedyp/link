@@ -1,4 +1,6 @@
 # API Overview
+
+## API function syntax
 The Link API functions all reside in `⎕SE.Link`.
 
 The general syntax for Link API functions is as follows:
@@ -11,8 +13,25 @@ where:
 - `FnName` is the name of the API function
 - `args` is either a character vector or a nested vector as described in the help section for that API function.
 
-Typically, API functions take a character
-vector or a nested vector as a right argument. The left argument may either be a namespace containing option values, or an array of character vectors. Namespaces may be specified by reference. For more details on setting options, look below the following table:
+## Option Namespaces
+
+Some API functions accept an option namespace as
+the left argument. For example, to create a link with non-default `source` and `flatten` options,
+you would write:
+
+```apl
+      options←⎕NS ⍬                                     ⍝ create empty namespace
+      options.(source flatten)←'dir' 1                  ⍝ set two named options
+      options ⎕SE.Link.Create 'myapp' '/sources/myapp'  ⍝ namespace and director name on the right, options on left
+```
+
+## User commands
+
+Some API functions have a corresponding user command, to make them a little easier to use interactively. The API functions with user command covers are indicated with <sup>`]`</sup> in the function reference tables. These user commands all take exactly the same arguments and options as the API functions, specified using user command syntax. The Link.Create call above would thus be written:
+```apl
+      ]LINK.Create myapp /sources/myapp -source=dir -flatten
+```
+***Specifying extensions:*** Two options require arrays identifying file extensions: `codeExtensions`, `customExtensions` and `typeExtensions`. For convenience, the `]LINK.Create` user command accepts the *name* of a variable containing the array, rather than the array values. 
 
 ## Basic API Function reference
 
@@ -46,23 +65,3 @@ Function                                              | Right Argument(s)       
  [TypeExtension](Link.TypeExtension.md)               | name class                 | option namespace used for [Create](Link.Create.md) | file extension (without leading `'.'`)                         |                                                |
 
  <sup>`]`</sup> These functions have [user command covers](#user-commands).
-
-## Option Namespaces
-
-Some API functions accept an option namespace as
-the left argument. For example, to create a link with non-default `source` and `flatten` options,
-you would write:
-
-```apl
-      options←⎕NS ''                                    ⍝ create empty namespace
-      options.(source flatten)←'dir' 1                  ⍝ set two named options
-      options ⎕SE.Link.Create 'myapp' '/sources/myapp'  ⍝ namespace and director name on the right, options on left
-```
-
-## User commands
-
-Some API functions have a corresponding user command, to make them a little easier to use interactively. The API functions with user command covers are indicated with <sup>`]`</sup> in the above tables. These user commands all take exactly the same arguments and options as the API functions, specified using user command syntax. The Link.Create call above would thus be written:
-```apl
-      ]LINK.Create myapp /sources/myapp -source=dir -flatten
-```
-***Specifying extensions:*** Two options require arrays identifying file extensions: `codeExtensions`, `customExtensions` and `typeExtensions`. For convenience, the `]Link.Create` user command accepts the *name* of a variable containing the array, rather than the array values. 

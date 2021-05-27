@@ -1,26 +1,23 @@
 # Converting an Existing Workspace to use Link
 
-In principle, it should be possible to write the entire contents of any workspace to an empty folder called `/folder/name` using the following command:
+## Exporting APL names from the active workspace
+By using [Link.Create](/API/Link.Create), the contents of the namespace argument will be written to text files in the specified empty folder and a link will be established between that folder and the namespace. Changes made to the code in the active workspace using the Dyalog editor (invoked, for example, using `)ED`) will be reflected automatically in the text files, and changes made to the text files will be reflected in the active workspace.
 
-```apl
-      ]Link.Create # /folder/name -arrays -sysVars
-```
+By using [Link.Export](/API/Link.Export), the contents of the namespace argument will be written to text files in the specified empty folder but a link will not be established. Changes made to the text files will only be in the text files, and changes made in the active workspace will only be in the active workspace.
 
-Either:  
-Write the contents of a workspace to Link-compatible text source:
+In principle, it should be possible to write the entire contents of any workspace to an empty folder called `/folder/name` using the following:
+
 ```APL
-)copy workspace.dws   ⍝ or )load
-'options'⎕NS⍬
-options.(arrays sysVars)←1
-options ⎕SE.Link.Create # /folder/name
+      'options'⎕NS⍬
+      options.(arrays sysVars)←1
+      options ⎕SE.Link.Create # /folder/name
 ```
+
 or equivalently, using the user command:
-```APL
-	]Link.Create # /folder/name -arrays -sysVars
-```
 
-OR  
-Write the contents of any workspace imported using `)LOAD`, `)COPY` or `)PCOPY` to Link-compatible text source files:
+```APL
+      ]LINK.Create # /folder/name -arrays -sysVars
+```
 
 ## Options
 
