@@ -4,18 +4,17 @@ nav:
     - index.md
     - Discussion/TechDetails.md
     - Discussion/Workspaces.md
-    - Discussion/HowDoesItWork.md
     - Discussion/History.md
     
   - Installation and Upgrade:
-    - GettingStarted/Installation.md
+    - Usage/Installation.md
     - Upgradeto30.md
     
   - Usage:
-    - GettingStarted/index.md
-    - GettingStarted/Setup.md
-    - GettingStarted/WStoLink.md
-    - GettingStarted/SALTtoLink.md
+    - Usage/index.md
+    - Usage/Setup.md
+    - Usage/WStoLink.md
+    - Usage/SALTtoLink.md
     
   - API:
     - API/index.md

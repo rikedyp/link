@@ -1,4 +1,5 @@
-# Getting Started
+# Basic Usage
+These sections cover the most commonly used commands. For more advanced usage, please consult the [API documentation](/API).
 
 ## Starting from text files
 Use [Link.Create](/API/Link.Create) to Link a directory containing text source to a namespace in the active workspace.
@@ -20,7 +21,7 @@ If your existing code is in a workspace rather than in source files, you might w
 ## Importing code without creating a link
 Sometimes you want to experiment and make modifications to your code without saving those changes. Use [Link.Import](/API/Link.Import) to bring code from text source files into the active workspace without creating a link.
 
-## Starting a New project
+## Starting a new project
 If you are starting a completely new project, create either a namespace in the active workspace or a folder on the file system (or both). For [Link.Create](/API/Link.Create) to successfully establish a link, at least one of those must exist and exactly one of them needs to contain some code?
 
 - If neither of them exist, Link.Create will reject the request on suspicion that there is a typo, in order to avoid silently creating an empty directory by mistake.
@@ -90,6 +91,16 @@ When the editor fixes the definition of the function in the workspace, Link will
       ls '/tmp/stats/*'
   /tmp/stats/Mean.aplf  /tmp/stats/Median.aplf  /tmp/stats/Root.aplf  /tmp/stats/StdDev.aplf  
 ```
+
+## Viewing the status of links
+The function [Link.Status](../API/Link.Status.md) will show namespaces that are currently linked and the folders to which they are linked. The user command `]LINK.Status` is a convenient way to use this.
+
+## Unlinking a namespace
+To continue using code in the active workspace, but without updating text source files, use [Link.Break](../API/Link.Break.md) (or its user command equivalent.
+
+Clearing the workspace, for example using `)CLEAR`, or exiting Dyalog, for example with `)OFF`, will also break all links in the active workspace.
+
+See the [technical details on breaking links](/Discussion/TechDetails/#breaking-links) for more information, for example about what happens when you delete a linked namespace from the active workspace.
 
 ## Changes made Outside the Editor
 

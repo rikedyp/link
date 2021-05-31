@@ -3,9 +3,9 @@
 This is documentation for the system called *Link* which enables users of Dyalog to store their APL source code in text files. Link version 3.0 is included with Dyalog version 18.1. If you have an earlier version of APL or Link, you might want to 
 read one or more of the following pages before continuing: 
 
-* [Migrating to Link 3.0 from from Link 2.0:](Upgradeto30.md) If you are already using an earlier version of Link.
-* [Migrating to Link 3.0 from SALT:](GettingStarted/SALTtoLink.md) If you have APL source in text files managed by SALT that you want to migrate to Link.
-* [Installation instructions:](GettingStarted/Installation.md) If you want to download and install Link from the GitHub repository rather than use the version installed with APL, for example if you want to use Link 3.0 with Dyalog version 18.0.
+* [Migrating to Link 3.0 from Link 2.0:](Upgradeto30.md) If you are already using an earlier version of Link.
+* [Migrating to Link 3.0 from SALT:](Usage/SALTtoLink.md) If you have APL source in text files managed by SALT that you want to migrate to Link.
+* [Installation instructions:](Usage/Installation.md) If you want to download and install Link from the GitHub repository rather than use the version installed with APL, for example if you want to use Link 3.0 with Dyalog version 18.0.
 * [The historical perspective:](Discussion/History.md) Link is a step on a journey which begins more than a decade ago with the introduction of SALT for managing source code in text files, as an alternative to binary workspaces and files, and will hopefully end with the interpreter handling everything itself.
 
 ## Audience
@@ -18,7 +18,7 @@ It is assumed the reader has a reasonable understanding of Dyalog and in particu
 * It is easy to use source code management tools like Git or Subversion to manage your code.
 
 !!! Note
-	Although an SCM is not a requirement for Link, if you are not already using a source code management system, we ***highly*** recommend making the effort to [learn about - and install Git](GettingStarted/SCMforAPLers.md).
+	Although an SCM is not a requirement for Link, if you are not already using a source code management system, we ***highly*** recommend making the effort to learn about and install Git.
 	
 	If you choose not to use an SCM then you just need your own strategy for taking suitable copies of your source files, as you would with workspaces.
 
@@ -53,18 +53,16 @@ Any changes made to the external files using a text editor, or resulting from an
 You can invoke `]LINK.Create`several times to create multiple links, and you can also use `]LINK.Import`or `]LINK.Export` to import source code into the workspace or export code to external files *without* creating links that will respond to subsequent changes. 
 
 ## Functions vs. User Commands
-
-Before we move on to look at creating some links, a few words about the two ways that Link functionality can be accessed. With a few exceptions, each [Link API function](API/index.md) has a corresponding User Command, designed to make the functionality slightly easier to use interactively.
+With a few exceptions, each [Link API function](API/index.md) has a corresponding User Command, designed to make the functionality slightly easier to use interactively.
 
 ### User commands
-
 The user commands have the general syntax
 
 ```
      ]LINK.CmdName arg1 [arg2] [-name[=value] ...]
 ```
 
-where `arg2`'s presence depends on the specific command, and `-name` is a flag enabling the specific option and `-name=value` sets the specific option to a specific value. Some options (like `codeExtensions` and `typeExtensions`) require an array of values: in these cases the user commands typically take the *name* of a variable containing that array.
+where `arg2`'s presence depends on the specific command, `-name` is a flag enabling the specific option and `-name=value` sets that option to a specific value. Some options (like `codeExtensions` and `typeExtensions`) require an array of values: in these cases the user commands typically take the *name* of a variable containing that array.
 
 For a list of installed user commands, type:
 
@@ -89,14 +87,14 @@ The details of the arguments to the functions and the user commands can be found
 
 To get started using Link, please read:
 
-* [Getting Started](GettingStarted/index.md) to see how to set up your first links, and learn about exporting existing application code to source files.
-* [Setting up your environment](GettingStarted/Setup.md) for a discussion of how to set up Link-based development and runtime environments.
+* [Basic Usage](Usage/index.md) to see how to set up your first links, and learn about exporting existing application code to source files.
+* [Setting up your environment](Usage/Setup.md) for a discussion of how to set up Link-based development and runtime environments.
 * [Technical Details and Limitations](Discussion/TechDetails.md) if you want to know about the full range of APL objects that are supported, and some of the edge cases that are not yet supported by Link.
 
 If you have an existing APL application that you want to move to Link, you might want to read one of the following texts first:
 
-* [Converting your workspace to text source:](GettingStarted/WStoLink.md) if you already have an existing body of APL code in binary workspaces.
-* [Migrating to Link 3.0 from SALT:](GettingStarted/SALTtoLink.md) if you are already managing text source using Link's predecessor SALT.
+* [Converting your workspace to text source:](Usage/WStoLink.md) if you already have an existing body of APL code in binary workspaces.
+* [Migrating to Link 3.0 from SALT:](Usage/SALTtoLink.md) if you are already managing text source using Link's predecessor SALT.
 
 ## Frequently Asked Questions
 

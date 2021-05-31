@@ -35,7 +35,7 @@ If .NET is available, Link uses a File System Watcher to monitor linked director
 
 Link consists of a set of API functions which are loaded into the namespace `⎕SE.Link` when APL starts, from **$DYALOG/StartupSession/Link**. The user command file **$DYALOG/SALT/SPICE/Link.dyalog** provides access to the interactive user command covers that exist for most of the API functions. The code is included with installations of Dyalog version 18.1 or later. 
 
-If you want to use Link with version 18.0 or download and install Link from GitHub, see the [installation instructions](/GettingStarted/Installation.md).
+If you want to use Link with version 18.0 or download and install Link from GitHub, see the [installation instructions](/Usage/Installation.md).
 
 ### The Crawler
 
