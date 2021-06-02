@@ -10,7 +10,7 @@ Some of the changes have the potential to break existing applications that use L
 * The `source=both` option has been removed from [Link.Create](API/Link.Create.md).
 * Link.List has been renamed [Link.Status](API/Link.Status.md).
 * When providing a new value for an array using [Link.Fix](API/Link.Fix.md), Link 3.0 expects the text source form of the array rather than the value of the array (bringing arrays into line with all other cases). To update using a new value, assign the value to the array and call [Link.Add](API/Link.Add.md).
-* If you have defined handlers for custom array representations, there have been significant changes to the arguments to the `beforeRead` and `beforeWrite`callback functions. Also, a new `getFilename` callback has been added. These functions are described in the documentation for [Link.Create](API/Link.Create.md).
+* If you have defined handlers for custom array representations, there have been significant changes to the arguments to the `beforeRead` and `beforeWrite`callback functions. Also, a new `getFilename` callback has been added. These callback functions are described in the documentation for [Link.Create](API/Link.Create.md).
 * **fastLoad:** When loading very large bodies of code (thousands or tens of thousands of functions), you may need to specify the new `fastLoad` option on [Link.Create](API/Link.Create.md), in order to disable the checking of whether the names of items actually defined by source files correspond to the name of the file. Without this option, link creation may slow down so much that it could be considered a breaking change.
 
 ### Other Significant Changes
@@ -21,9 +21,9 @@ The most important new features are:
 * "Case Coding" of file names, supporting the maintenence of source for names which differ only in case (for example, `FOO` vs `Foo`) in case-insensitive file systems.
 * The addition of the [Link.LaunchDir](API/Link.LaunchDir.md) API function, which returns the name of the directory that the interpreter was started from, either using the `LOAD=` or `CONFIGFILE=`setting.
 
-### Release Notes
+### Change History
 
-A detailed list of new features added to recent releases and a few behavioural changes can be found in the [Link 3.0 Release Notes](ReleaseNotes.md). 
+A detailed list of new features added to recent releases and a few behavioural changes can be found in the [Link Change History](ChangeHistory.md). 
 
 
 

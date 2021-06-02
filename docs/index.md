@@ -1,4 +1,4 @@
-# Overview
+# Introduction
 
 This is documentation for the system called *Link* which enables users of Dyalog to store their APL source code in text files. Link version 3.0 is included with Dyalog version 18.1. If you have an earlier version of APL or Link, you might want to 
 read one or more of the following pages before continuing: 
@@ -35,7 +35,7 @@ It is assumed the reader has a reasonable understanding of Dyalog and in particu
 * **A source code management system**: we recommend using Git to manage the text files that Link will help you create and edit using Dyalog.
 * **A database management system:** although Link is able to store APL arrays using a pre-release of the *literal array notation*, this is only intended to be used for constants which you consider to be part of the source code of your applications. Although all functions and operators that you define will be written to source files by default, arrays are only written to source files upon request using [Link.Add](API/Link.Add.md) or by specifying optional parameters to [Link.Export](API/Link.Export.md). Application data should be stored in a database management system or files managed by the application.
 
-## Link Fundamentals
+## Link fundamentals
 
 Link establishes ***links*** between one or more **namespaces** in the active APL workspace and corresponding **directories** containing APL source code in Unicode test files. For example, the following user command invocation will link a namespace called `myapp` to the folder `/home/sally/myapp`:
 
@@ -45,15 +45,15 @@ Link establishes ***links*** between one or more **namespaces** in the active AP
 
 If `myapp` contains sub-directories, a namespace hierarchy corresponding to the directory structure will be created within the `myapp` namespace. By default, the link is bi-directional, which means that Link will:
 
-* **Keep Source Files up-to-date:** 
+* **Keep source files up-to-date:** 
 Any changes made to code in the active workspace using the tracer and editor are immediately replicated in the corresponding text files.
-* **Keep the Workspace up-to-date:**
+* **Keep the workspace up-to-date:**
 Any changes made to the external files using a text editor, or resulting from an SCM action such as rolling back or switching to a different branch, will immediately be reflected in the active workspace.
 
-You can invoke `]LINK.Create`several times to create multiple links, and you can also use `]LINK.Import`or `]LINK.Export` to import source code into the workspace or export code to external files *without* creating links that will respond to subsequent changes. 
+You can invoke [Link.Create](/API/Link.Create.md) several times to create multiple links, and you can also use [Link.Import](/API/Link.Import.md) or [Link.Export](/API/Link.Export.md) to import source code into the workspace or export code to external files *without* creating links that will respond to subsequent changes. 
 
 ## Functions vs. User Commands
-With a few exceptions, each [Link API function](API/index.md) has a corresponding User Command, designed to make the functionality slightly easier to use interactively.
+With a few exceptions, each [Link API function](API/index.md) has a corresponding User Command, designed to make the functionality slightly easier to use interactively in the session.
 
 ### User commands
 The user commands have the general syntax
@@ -71,33 +71,33 @@ For a list of installed user commands, type:
      ]LINK .?
 ```
 
-### API Functions
+### API functions
 
 The API is designed for use under program control, and options are provided in an optional namespace passed as the left argument. The general syntax of the utility functions is
 
 ```apl
-     options FnName arg
+     options FnName arguments
 ```
 
 where `options` is a namespace with variables, named according to the option they set, containing their corresponding values. The `-name=value` option can be set by `options.name←value`, and switches with values (e.g. `-name`) can be set by `options.name←1`. Unset options will assume their default value.
 
 The details of the arguments to the functions and the user commands can be found in the [API Reference](API/index.md).
 
-## Further Reading
+## Further reading
 
 To get started using Link, please read:
 
 * [Basic Usage](Usage/index.md) to see how to set up your first links, and learn about exporting existing application code to source files.
-* [Setting up your environment](Usage/Setup.md) for a discussion of how to set up Link-based development and runtime environments.
+* [Setting Up Your Environment](Usage/Setup.md) for a discussion of how to set up Link-based development and runtime environments.
 * [Technical Details and Limitations](Discussion/TechDetails.md) if you want to know about the full range of APL objects that are supported, and some of the edge cases that are not yet supported by Link.
 
 If you have an existing APL application that you want to move to Link, you might want to read one of the following texts first:
 
-* [Converting your workspace to text source:](Usage/WStoLink.md) if you already have an existing body of APL code in binary workspaces.
+* [Converting Your Workspace to Text Source:](Usage/WStoLink.md) if you already have an existing body of APL code in binary workspaces.
 * [Migrating to Link 3.0 from SALT:](Usage/SALTtoLink.md) if you are already managing text source using Link's predecessor SALT.
 
 ## Frequently Asked Questions
 
-* [What happens if I save a workspace after creating Links?](../Discussion/Workspaces.md)
-* [Are workspaces dead now?](../Discussion/Workspaces.md)
-* [How is Link implemented?](../Discussion/HowDoesItWork.md)
+* [What happens if I save a workspace after creating Links?](../Discussion/Workspaces/#saving-workspaces-containing-links)
+* [Are workspaces dead now?](../Discussion/Workspaces/#are-workspaces-dead-now)
+* [How is Link implemented?](../Discussion/TechDetails/#how-does-link-work)

@@ -8,7 +8,7 @@ Historically, APL systems have used *saved workspaces* as the way to store the c
 
 ### Component Files and SQL Databases
 
-Workspaces are very convenient, but the binary format makes them awkward if you want to compare, or otherwise manage, different versions of the source code - or the data, for that matter. Users preferred to store their data in component files or other storage mechanisms. As teams started writing larger systems, many development teams also created their own source code management systems, typically storing multiple versions of code in component files or SQL tables.
+Workspaces are very convenient, but the binary format makes them awkward if you want to compare, or otherwise manage, different versions of the source code - or the data, for that matter. Users preferred to store their data in component files or other storage mechanisms. As teams started writing larger systems, many development teams also created their own source code management systems (SCMs), typically storing multiple versions of code in component files or SQL tables.
 
 These SCMs served large developer teams well for several decades. However, none of them became tools that were shared by the APL community, and they all suffered from the fundamental problem of using binary formats.
 
@@ -45,8 +45,8 @@ After SALT had grown organically for more than a decade, it was decided that thi
 
 Link 3.0 is the first major revision of Link. It adds:
 
-* Support for saving workspaces containing links code and resuming work after a break.
+* Support for saving workspaces containing links and resuming work after a break.
 * Support for names which differ only in case (for example, `FOO` vs `Foo`) in case-insensitive file systems, by adding "case coding" information to the file name.
 * A new `Link.LaunchDir` API function, that makes it straightforward to replace the old SALT `.dyapp` files with new features in the interpreter, that make it possible to launch the interpreter using a configuration file or single APL source file.
 
-A more complete description of the differences between Link 2.0 and 3.0 are described in the guide on [upgrading from 2.0 to 3.0](/Upgradeto30.md).
+A more complete description of the differences between Link 2.0 and 3.0 are described in the guide on [upgrading from 2.0 to 3.0](../Upgradeto30.md).
